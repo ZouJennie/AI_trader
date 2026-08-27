@@ -46,8 +46,8 @@ function setCloudStatus(message,type=""){
 
 function updateCloudControls(){
   const configured=syncConfigured();
-  const signedIn=Boolean(cloud.user);$("syncEmail").hidden=signedIn;$("sendMagicLink").hidden=signedIn;$("syncNow").hidden=!signedIn;$("signOut").hidden=!signedIn;
-  $("syncEmail").disabled=!configured;$("sendMagicLink").disabled=!configured;
+  const signedIn=Boolean(cloud.user);$("syncEmail").hidden=signedIn;$("syncPassword").hidden=signedIn;$("signInPassword").hidden=signedIn;$("sendMagicLink").hidden=signedIn;$("newSyncPassword").hidden=!signedIn;$("setPassword").hidden=!signedIn;$("syncNow").hidden=!signedIn;$("signOut").hidden=!signedIn;
+  $("syncEmail").disabled=!configured;$("syncPassword").disabled=!configured;$("signInPassword").disabled=!configured;$("sendMagicLink").disabled=!configured;$("newSyncPassword").disabled=!configured||!signedIn;$("setPassword").disabled=!configured||!signedIn;
   if(signedIn)setCloudStatus(`已登录 ${cloud.user.email||"Supabase"}，实际交易会自动同步。`,"sync-ok");
 }
 
@@ -73,6 +73,26 @@ async function sendMagicLink(){
   const redirectTo=`${window.location.origin}${window.location.pathname}`;
   const {error}=await cloud.client.auth.signInWithOtp({email,options:{emailRedirectTo:redirectTo}});
   setCloudStatus(error?`发送失败：${error.message}`:"登录链接已发送，请在同一设备打开邮件完成登录。",error?"sync-error":"sync-ok");
+}
+
+async function signInWithPassword(){
+  if(!cloud.client){setCloudStatus("Supabase 尚未配置，当前仅保存在本机。","sync-error");return;}
+  const email=$("syncEmail").value.trim();const password=$("syncPassword").value;
+  if(!email||!password){setCloudStatus("请输入邮箱和密码。","sync-error");return;}
+  setCloudStatus("正在登录…");
+  const {error}=await cloud.client.auth.signInWithPassword({email,password});
+  if(error)setCloudStatus(`登录失败：${error.message}`,"sync-error");
+  else $("syncPassword").value="";
+}
+
+async function setAccountPassword(){
+  if(!cloud.client||!cloud.user){setCloudStatus("请先通过邮件链接登录一次。","sync-error");return;}
+  const password=$("newSyncPassword").value;
+  if(password.length<8){setCloudStatus("新密码至少需要 8 位。","sync-error");return;}
+  setCloudStatus("正在设置密码…");
+  const {error}=await cloud.client.auth.updateUser({password});
+  if(error)setCloudStatus(`密码设置失败：${error.message}`,"sync-error");
+  else{$("newSyncPassword").value="";setCloudStatus("密码设置成功；主屏幕 App 现在可以直接登录。","sync-ok");}
 }
 
 function queueCloudSave(){
@@ -294,5 +314,5 @@ async function importLedger(event){
   catch(error){alert(`导入失败：${error.message}`);}finally{event.target.value="";}
 }
 
-$("tradeForm").addEventListener("submit",submitTrade);$("cancelEdit").addEventListener("click",resetForm);$("exportData").addEventListener("click",exportLedger);$("importData").addEventListener("change",importLedger);$("sendMagicLink").addEventListener("click",sendMagicLink);$("syncNow").addEventListener("click",reconcileCloud);$("signOut").addEventListener("click",signOutCloud);
+$("tradeForm").addEventListener("submit",submitTrade);$("cancelEdit").addEventListener("click",resetForm);$("exportData").addEventListener("click",exportLedger);$("importData").addEventListener("change",importLedger);$("sendMagicLink").addEventListener("click",sendMagicLink);$("signInPassword").addEventListener("click",signInWithPassword);$("syncPassword").addEventListener("keydown",event=>{if(event.key==="Enter")signInWithPassword();});$("setPassword").addEventListener("click",setAccountPassword);$("newSyncPassword").addEventListener("keydown",event=>{if(event.key==="Enter")setAccountPassword();});$("syncNow").addEventListener("click",reconcileCloud);$("signOut").addEventListener("click",signOutCloud);
 resetForm();loadAdvice();initializeCloudSync();

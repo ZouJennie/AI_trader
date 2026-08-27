@@ -38,6 +38,8 @@
 4. 部署网页后输入邮箱，点击“发送登录链接”；首次登录后，在 **Authentication → Users** 复制自己的 User UID，保存为 GitHub Secret `SUPABASE_USER_ID`。
 5. 将 `sb_secret_...` Key 保存为 GitHub Secret `SUPABASE_SECRET_KEY`。绝对不要把它写入网页、源码或 `supabase-config.js`。
 
+如果把网页安装到手机主屏幕，邮件链接通常会在系统浏览器打开，而浏览器与主屏幕 Web App 不共享登录会话。先在普通浏览器通过 Magic Link 登录一次，然后在网页同步区设置至少 8 位密码；之后电脑与主屏幕 App 都可用同一邮箱和密码分别登录。Magic Link 仍保留为首次验证方式。
+
 浏览器端只能使用 publishable key。数据库迁移已启用 Row Level Security，每个登录用户只能读写自己的台账。GitHub Actions 使用 secret key 和指定 User UID，在每日分析前临时读取真实台账，并据此恢复零碎股、现金和含买入手续费的成本基础。
 
 真实台账和持仓文件都不会提交到公开仓库；DeepSeek 会用它们推理，但系统提示禁止在公开建议中输出精确股数、现金、成本基础、手续费或账户标识。公开建议仍可能包含所分析或持有股票的代码，如果连股票代码也不希望公开，应使用受访问控制的站点而不是公开 GitHub Pages。
