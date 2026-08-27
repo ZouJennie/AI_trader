@@ -1,7 +1,8 @@
 langchain==1.0.2
 langchain-openai==1.0.1
-langchain-mcp-adapters>=0.1.0
+langchain-mcp-adapters==0.1.12
 fastmcp==2.12.5
+mcp==1.16.0
 python-dotenv==1.2.1
 filelock==3.20.0
 requests==2.32.5
