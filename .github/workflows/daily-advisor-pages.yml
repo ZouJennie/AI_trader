@@ -1,0 +1,139 @@
+name: Daily advisor and GitHub Pages
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+  schedule:
+    # GitHub cron uses UTC. Two entries cover New York daylight/standard time;
+    # daily_run_gate.py permits only the invocation that is 10:xx in New York.
+    - cron: "15 14 * * 1-5"
+    - cron: "15 15 * * 1-5"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: daily-advisor-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      should_run: ${{ steps.gate.outputs.run }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Decide whether to run advisor
+        id: gate
+        env:
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
+        run: python scripts/daily_run_gate.py >> "$GITHUB_OUTPUT"
+
+      - name: Install runtime dependencies
+        if: steps.gate.outputs.run == 'true'
+        run: pip install -r requirements.txt
+
+      - name: Validate required secrets
+        if: steps.gate.outputs.run == 'true'
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          ALPHAADVANTAGE_API_KEY: ${{ secrets.ALPHAADVANTAGE_API_KEY }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+          SUPABASE_USER_ID: ${{ secrets.SUPABASE_USER_ID }}
+        run: |
+          test -n "$DEEPSEEK_API_KEY" || { echo "Missing repository secret: DEEPSEEK_API_KEY"; exit 1; }
+          test -n "$ALPHAADVANTAGE_API_KEY" || { echo "Missing repository secret: ALPHAADVANTAGE_API_KEY"; exit 1; }
+          test -n "$SUPABASE_URL" || { echo "Missing repository secret: SUPABASE_URL"; exit 1; }
+          test -n "$SUPABASE_SECRET_KEY" || { echo "Missing repository secret: SUPABASE_SECRET_KEY"; exit 1; }
+          test -n "$SUPABASE_USER_ID" || { echo "Missing repository secret: SUPABASE_USER_ID"; exit 1; }
+
+      - name: Refresh intraday market data
+        if: steps.gate.outputs.run == 'true'
+        env:
+          ALPHAADVANTAGE_API_KEY: ${{ secrets.ALPHAADVANTAGE_API_KEY }}
+        working-directory: data
+        run: |
+          python get_interdaily_price.py
+          python merge_jsonl.py
+
+      - name: Reject incomplete or stale market snapshot
+        if: steps.gate.outputs.run == 'true'
+        run: python scripts/validate_market_snapshot.py --minimum-coverage 0.90
+
+      - name: Import private actual portfolio
+        if: steps.gate.outputs.run == 'true'
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+          SUPABASE_USER_ID: ${{ secrets.SUPABASE_USER_ID }}
+        run: python scripts/import_actual_portfolio.py --date "$(TZ=America/New_York date +%F)"
+
+      - name: Start analysis services
+        if: steps.gate.outputs.run == 'true'
+        env:
+          JINA_API_KEY: ${{ secrets.JINA_API_KEY }}
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+        run: |
+          python agent_tools/start_mcp_services.py > service-manager.log 2>&1 &
+          echo $! > service-manager.pid
+          sleep 8
+
+      - name: Generate daily recommendation
+        if: steps.gate.outputs.run == 'true'
+        env:
+          OPENAI_API_BASE: https://api.deepseek.com/v1
+          OPENAI_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          JINA_API_KEY: ${{ secrets.JINA_API_KEY }}
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+          PYTHONUTF8: "1"
+        run: python scripts/run_daily_advisor.py --once
+
+      - name: Stop analysis services
+        if: always() && steps.gate.outputs.run == 'true'
+        run: |
+          if test -f service-manager.pid; then kill "$(cat service-manager.pid)" 2>/dev/null || true; fi
+
+      - name: Export site data
+        if: success()
+        run: python scripts/export_advisor_site.py
+
+      - name: Persist public advice
+        if: steps.gate.outputs.run == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data/advice.json
+          git add -f data/agent_data/deepseek-v4-flash/recommendations/recommendations.jsonl
+          git diff --cached --quiet || git commit -m "chore: publish daily investment advice"
+          git push
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: docs
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

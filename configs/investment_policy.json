@@ -1,0 +1,52 @@
+{
+  "strategy_name": "small_capital_ai_validation",
+  "market": "us",
+  "allowed_products": ["individual_stock"],
+  "initial_capital_usd": 200.0,
+  "target_new_position_usd": 80.0,
+  "max_open_positions": 2,
+  "minimum_cash_reserve_usd": 20.0,
+  "minimum_holding_days": 30,
+  "leverage_allowed": false,
+  "entry_gate": {
+    "maximum_buys_per_day": 1,
+    "minimum_confidence": 0.75,
+    "minimum_margin_of_safety_pct": 15.0,
+    "minimum_expected_net_upside_pct": 8.0,
+    "maximum_price_premium_to_sma20_pct": 8.0,
+    "require_fundamental_gate": true,
+    "require_no_material_sec_risk": true,
+    "require_trend_gate": true,
+    "allow_hold_when_no_candidate_passes": true
+  },
+  "normal_exit": {
+    "must_cover_open_and_close_fees": true,
+    "minimum_net_profit_usd": 0.01
+  },
+  "early_loss_exit": {
+    "allowed_only_for_material_change": true,
+    "requires_explicit_evidence": true,
+    "examples": [
+      "material deterioration in company fundamentals or guidance",
+      "material legal, accounting, regulatory or solvency event",
+      "confirmed major trend break accompanied by abnormal volume",
+      "original investment thesis is demonstrably invalidated"
+    ]
+  },
+  "trend_confirmation": {
+    "macd_fast_period": 12,
+    "macd_slow_period": 26,
+    "macd_signal_period": 9,
+    "moving_average_periods": [20, 50, 200],
+    "major_break_sma_period": 50,
+    "major_break_confirmation_closes": 2,
+    "abnormal_volume_ratio": 1.5,
+    "macd_is_confirmation_not_sole_trigger": true
+  },
+  "evaluation": {
+    "record_all_recommendations_for_paper_evaluation": true,
+    "forward_return_windows_days": [20, 60, 120],
+    "benchmark_symbols": ["QQQ", "SPY"],
+    "real_account_results_include_all_fees": true
+  }
+}

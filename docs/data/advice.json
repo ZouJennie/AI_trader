@@ -1,0 +1,413 @@
+{
+  "generated_at": "2026-08-27T07:41:54.375435-04:00",
+  "model": "deepseek-v4-flash",
+  "initial_cash": 200.0,
+  "latest": null,
+  "history": [],
+  "prices": {
+    "AAPL": {
+      "price": 270.715,
+      "timestamp": "2026-01-05"
+    },
+    "ABNB": {
+      "price": 133.1,
+      "timestamp": "2026-01-05"
+    },
+    "ADBE": {
+      "price": 329.98,
+      "timestamp": "2026-01-05"
+    },
+    "ADI": {
+      "price": 275.03,
+      "timestamp": "2026-01-05"
+    },
+    "ADP": {
+      "price": 252.69,
+      "timestamp": "2026-01-05"
+    },
+    "ADSK": {
+      "price": 287.17,
+      "timestamp": "2026-01-05"
+    },
+    "AEP": {
+      "price": 115.57,
+      "timestamp": "2026-01-05"
+    },
+    "AMAT": {
+      "price": 276.12,
+      "timestamp": "2026-01-05"
+    },
+    "AMD": {
+      "price": 230.315,
+      "timestamp": "2026-01-05"
+    },
+    "AMGN": {
+      "price": 325.17,
+      "timestamp": "2026-01-05"
+    },
+    "AMZN": {
+      "price": 228.865,
+      "timestamp": "2026-01-05"
+    },
+    "APP": {
+      "price": 616.6817,
+      "timestamp": "2026-01-05"
+    },
+    "ARM": {
+      "price": 120.54,
+      "timestamp": "2026-01-05"
+    },
+    "ASML": {
+      "price": 1211.67,
+      "timestamp": "2026-01-05"
+    },
+    "AVGO": {
+      "price": 354.74,
+      "timestamp": "2026-01-05"
+    },
+    "AXON": {
+      "price": 569.65,
+      "timestamp": "2026-01-05"
+    },
+    "AZN": {
+      "price": 91.165,
+      "timestamp": "2026-01-05"
+    },
+    "BIIB": {
+      "price": 176.095,
+      "timestamp": "2026-01-05"
+    },
+    "BKNG": {
+      "price": 5300.0698,
+      "timestamp": "2026-01-05"
+    },
+    "BKR": {
+      "price": 49.44,
+      "timestamp": "2026-01-05"
+    },
+    "CCEP": {
+      "price": 87.89,
+      "timestamp": "2026-01-05"
+    },
+    "CDNS": {
+      "price": 311.24,
+      "timestamp": "2026-01-05"
+    },
+    "CDW": {
+      "price": 133.16,
+      "timestamp": "2026-01-05"
+    },
+    "CEG": {
+      "price": 371.565,
+      "timestamp": "2026-01-05"
+    },
+    "CHTR": {
+      "price": 209.47,
+      "timestamp": "2026-01-05"
+    },
+    "CMCSA": {
+      "price": 27.73,
+      "timestamp": "2026-01-05"
+    },
+    "COST": {
+      "price": 863.63,
+      "timestamp": "2026-01-05"
+    },
+    "CPRT": {
+      "price": 37.56,
+      "timestamp": "2026-01-05"
+    },
+    "CRWD": {
+      "price": 458.4,
+      "timestamp": "2026-01-05"
+    },
+    "CSCO": {
+      "price": 76.45,
+      "timestamp": "2026-01-05"
+    },
+    "CSGP": {
+      "price": 65.6,
+      "timestamp": "2026-01-05"
+    },
+    "CSX": {
+      "price": 36.09,
+      "timestamp": "2026-01-05"
+    },
+    "CTAS": {
+      "price": 184.15,
+      "timestamp": "2026-01-05"
+    },
+    "CTSH": {
+      "price": 81.04,
+      "timestamp": "2026-01-05"
+    },
+    "DASH": {
+      "price": 220.52,
+      "timestamp": "2026-01-05"
+    },
+    "DDOG": {
+      "price": 132.92,
+      "timestamp": "2026-01-05"
+    },
+    "DXCM": {
+      "price": 66.64,
+      "timestamp": "2026-01-05"
+    },
+    "EA": {
+      "price": 204.38,
+      "timestamp": "2026-01-05"
+    },
+    "EXC": {
+      "price": 43.86,
+      "timestamp": "2026-01-05"
+    },
+    "FANG": {
+      "price": 153.73,
+      "timestamp": "2026-01-05"
+    },
+    "FAST": {
+      "price": 40.38,
+      "timestamp": "2026-01-05"
+    },
+    "FTNT": {
+      "price": 78.53,
+      "timestamp": "2026-01-05"
+    },
+    "GEHC": {
+      "price": 82.79,
+      "timestamp": "2026-01-05"
+    },
+    "GFS": {
+      "price": 37.49,
+      "timestamp": "2026-01-05"
+    },
+    "GILD": {
+      "price": 120.77,
+      "timestamp": "2026-01-05"
+    },
+    "GOOG": {
+      "price": 317.71,
+      "timestamp": "2026-01-05"
+    },
+    "GOOGL": {
+      "price": 317.605,
+      "timestamp": "2026-01-05"
+    },
+    "HON": {
+      "price": 194.95,
+      "timestamp": "2026-01-05"
+    },
+    "IDXX": {
+      "price": 670.21,
+      "timestamp": "2026-01-05"
+    },
+    "INTC": {
+      "price": 41.59,
+      "timestamp": "2026-01-05"
+    },
+    "INTU": {
+      "price": 629.46,
+      "timestamp": "2026-01-05"
+    },
+    "ISRG": {
+      "price": 560.69,
+      "timestamp": "2026-01-05"
+    },
+    "KDP": {
+      "price": 27.64,
+      "timestamp": "2026-01-05"
+    },
+    "KHC": {
+      "price": 24.31,
+      "timestamp": "2026-01-05"
+    },
+    "KLAC": {
+      "price": 1309.97,
+      "timestamp": "2026-01-05"
+    },
+    "LIN": {
+      "price": 425.57,
+      "timestamp": "2026-01-05"
+    },
+    "LRCX": {
+      "price": 190.12,
+      "timestamp": "2026-01-05"
+    },
+    "LULU": {
+      "price": 211.96,
+      "timestamp": "2026-01-05"
+    },
+    "MAR": {
+      "price": 311.82,
+      "timestamp": "2026-01-05"
+    },
+    "MCHP": {
+      "price": 65.35,
+      "timestamp": "2026-01-05"
+    },
+    "MDLZ": {
+      "price": 53.36,
+      "timestamp": "2026-01-05"
+    },
+    "MELI": {
+      "price": 2011.9399,
+      "timestamp": "2026-01-05"
+    },
+    "META": {
+      "price": 650.41,
+      "timestamp": "2026-01-05"
+    },
+    "MNST": {
+      "price": 76.18,
+      "timestamp": "2026-01-05"
+    },
+    "MRVL": {
+      "price": 93.018,
+      "timestamp": "2026-01-05"
+    },
+    "MSFT": {
+      "price": 473.95,
+      "timestamp": "2026-01-05"
+    },
+    "MSTR": {
+      "price": 163.29,
+      "timestamp": "2026-01-05"
+    },
+    "MU": {
+      "price": 325.514,
+      "timestamp": "2026-01-05"
+    },
+    "NFLX": {
+      "price": 90.914,
+      "timestamp": "2026-01-05"
+    },
+    "NVDA": {
+      "price": 191.715,
+      "timestamp": "2026-01-05"
+    },
+    "NXPI": {
+      "price": 221.85,
+      "timestamp": "2026-01-05"
+    },
+    "ODFL": {
+      "price": 159.02,
+      "timestamp": "2026-01-05"
+    },
+    "ON": {
+      "price": 57.52,
+      "timestamp": "2026-01-05"
+    },
+    "ORLY": {
+      "price": 89.42,
+      "timestamp": "2026-01-05"
+    },
+    "PANW": {
+      "price": 182.705,
+      "timestamp": "2026-01-05"
+    },
+    "PAYX": {
+      "price": 108.6,
+      "timestamp": "2026-01-05"
+    },
+    "PCAR": {
+      "price": 111.53,
+      "timestamp": "2026-01-05"
+    },
+    "PDD": {
+      "price": 117.605,
+      "timestamp": "2026-01-05"
+    },
+    "PEP": {
+      "price": 141.65,
+      "timestamp": "2026-01-05"
+    },
+    "PLTR": {
+      "price": 174.871,
+      "timestamp": "2026-01-05"
+    },
+    "PYPL": {
+      "price": 58.0,
+      "timestamp": "2026-01-05"
+    },
+    "QCOM": {
+      "price": 175.46,
+      "timestamp": "2026-01-05"
+    },
+    "REGN": {
+      "price": 771.99,
+      "timestamp": "2026-01-05"
+    },
+    "ROP": {
+      "price": 429.63,
+      "timestamp": "2026-01-05"
+    },
+    "ROST": {
+      "price": 182.9,
+      "timestamp": "2026-01-05"
+    },
+    "SBUX": {
+      "price": 83.5,
+      "timestamp": "2026-01-05"
+    },
+    "SHOP": {
+      "price": 158.84,
+      "timestamp": "2026-01-05"
+    },
+    "SNPS": {
+      "price": 485.03,
+      "timestamp": "2026-01-05"
+    },
+    "TEAM": {
+      "price": 154.88,
+      "timestamp": "2026-01-05"
+    },
+    "TMUS": {
+      "price": 199.165,
+      "timestamp": "2026-01-05"
+    },
+    "TRI": {
+      "price": 127.11,
+      "timestamp": "2026-01-05"
+    },
+    "TSLA": {
+      "price": 447.72,
+      "timestamp": "2026-01-05"
+    },
+    "TTD": {
+      "price": 37.95,
+      "timestamp": "2026-01-05"
+    },
+    "TTWO": {
+      "price": 252.43,
+      "timestamp": "2026-01-05"
+    },
+    "TXN": {
+      "price": 178.02,
+      "timestamp": "2026-01-05"
+    },
+    "VRSK": {
+      "price": 220.21,
+      "timestamp": "2026-01-05"
+    },
+    "VRTX": {
+      "price": 448.83,
+      "timestamp": "2026-01-05"
+    },
+    "WBD": {
+      "price": 28.51,
+      "timestamp": "2026-01-05"
+    },
+    "WDAY": {
+      "price": 206.25,
+      "timestamp": "2026-01-05"
+    },
+    "XEL": {
+      "price": 74.44,
+      "timestamp": "2026-01-05"
+    },
+    "ZS": {
+      "price": 221.71,
+      "timestamp": "2026-01-05"
+    }
+  }
+}

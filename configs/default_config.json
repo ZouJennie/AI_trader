@@ -1,0 +1,31 @@
+{
+  "agent_type": "BaseAgent",
+  "market": "us",
+  "date_range": {
+    "init_date": "2026-01-05",
+    "end_date": "2026-01-05"
+  },
+  "models": [
+    {
+      "name": "deepseek-v4-flash",
+      "basemodel": "deepseek-v4-flash",
+      "signature": "deepseek-v4-flash",
+      "enabled": true
+    }
+  ],
+  "agent_config": {
+    "execution_mode": "advisory",
+    "max_steps": 30,
+    "max_retries": 3,
+    "base_delay": 1.0,
+    "initial_cash": 200.0
+  },
+  "log_config": {
+    "log_path": "./data/agent_data"
+  },
+  "schedule": {
+    "timezone": "America/New_York",
+    "analysis_time": "10:15",
+    "run_after_market_open_minutes": 45
+  }
+}

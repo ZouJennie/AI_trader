@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>AI 投资建议台</title>
+  <link rel="icon" type="image/svg+xml" href="figs/stock.svg">
+  <link rel="stylesheet" href="assets/css/advisor.css?v=1">
+</head>
+<body>
+  <header class="topbar">
+    <div><p class="eyebrow">DEEPSEEK V4 · US EQUITIES</p><h1>AI 投资建议台</h1><p class="muted">每天开盘后生成一份中长期建议，并跟踪你在 eToro 的真实执行结果。</p></div>
+    <div class="run-status"><span class="status-dot" aria-hidden="true"></span><div><small>最近更新</small><strong id="generatedAt">等待首次运行</strong></div></div>
+  </header>
+  <main>
+    <section class="summary-grid" aria-label="账户摘要">
+      <article class="metric"><span>账户净值</span><strong id="equity">$200.00</strong><small id="equityHint">本金 $200.00</small></article>
+      <article class="metric"><span>总收益</span><strong id="totalReturn">$0.00</strong><small id="returnRate">0.00%</small></article>
+      <article class="metric"><span>可用现金</span><strong id="cash">$200.00</strong><small id="invested">持仓市值 $0.00</small></article>
+      <article class="metric"><span>累计费用</span><strong id="fees">$0.00</strong><small id="tradeCount">0 笔实际交易</small></article>
+    </section>
+    <section class="panel sync-panel">
+      <div><p class="eyebrow">PRIVATE CLOUD SYNC</p><h2>真实持仓同步</h2><p class="muted compact" id="cloudStatus">当前为本机模式；配置 Supabase 后可登录同步。</p></div>
+      <div class="sync-controls">
+        <input id="syncEmail" type="email" autocomplete="email" placeholder="用于接收登录链接的邮箱" aria-label="同步登录邮箱">
+        <button class="primary" id="sendMagicLink" type="button">发送登录链接</button>
+        <button class="ghost" id="syncNow" type="button" hidden>立即同步</button>
+        <button class="ghost" id="signOut" type="button" hidden>退出</button>
+      </div>
+    </section>
+    <section class="panel advice-panel">
+      <div class="panel-heading"><div><p class="eyebrow">TODAY'S BRIEF</p><h2>今日 AI 建议</h2></div><span class="pill" id="adviceDate">暂无建议</span></div>
+      <div id="adviceContent" class="advice-content empty">GitHub Actions 首次成功运行后，建议会显示在这里。</div>
+      <details class="history-block"><summary>查看历史建议</summary><div id="adviceHistory" class="history-list"></div></details>
+    </section>
+    <div class="workspace-grid">
+      <section class="panel">
+        <div class="panel-heading"><div><p class="eyebrow">EXECUTION</p><h2 id="formTitle">录入实际交易</h2></div></div>
+        <form id="tradeForm" class="trade-form">
+          <input type="hidden" id="tradeId">
+          <label>交易日期<input id="tradeDate" type="date" required></label>
+          <label>方向<select id="tradeSide"><option value="buy">买入</option><option value="sell">卖出</option></select></label>
+          <label>股票代码<input id="symbol" maxlength="10" placeholder="AAPL" autocomplete="off" required></label>
+          <label>成交金额（美元）<input id="notional" type="number" min="0.01" step="0.01" placeholder="80.00" required></label>
+          <label>实际成交价<input id="executionPrice" type="number" min="0.0001" step="0.0001" placeholder="成交单价" required></label>
+          <label>手续费<input id="tradeFee" type="number" min="0" step="0.01" value="1.00" required></label>
+          <label>实际已实现收益（可选）<input id="pnlOverride" type="number" step="0.01" placeholder="仅卖出时填写"></label>
+          <label class="wide">备注<input id="tradeNote" maxlength="120" placeholder="例如：按建议买入、分批建仓"></label>
+          <div class="form-actions wide"><button class="primary" type="submit">保存交易</button><button class="ghost" id="cancelEdit" type="button" hidden>取消修改</button></div>
+          <p class="form-error wide" id="formError" role="alert"></p>
+        </form>
+      </section>
+      <section class="panel">
+        <div class="panel-heading"><div><p class="eyebrow">MARK TO MARKET</p><h2>当前价格修正</h2></div></div>
+        <p class="muted compact">自动价格来自每日任务。你可以填入 eToro 当前价覆盖它，留空则恢复自动价格。</p>
+        <div id="priceEditor" class="price-editor empty">录入买入交易后即可修正持仓价格。</div>
+      </section>
+    </div>
+    <section class="panel">
+      <div class="panel-heading"><div><p class="eyebrow">POSITIONS</p><h2>实际持仓与收益</h2></div></div>
+      <div class="table-wrap"><table><thead><tr><th>股票</th><th>份额</th><th>平均成本</th><th>当前价</th><th>市值</th><th>浮动收益</th><th>已实现收益</th></tr></thead><tbody id="positionsBody"></tbody></table></div>
+    </section>
+    <section class="panel">
+      <div class="panel-heading"><div><p class="eyebrow">LEDGER</p><h2>实际交易记录</h2></div><div class="toolbar"><button class="ghost" id="exportData" type="button">导出备份</button><label class="file-button">导入备份<input id="importData" type="file" accept="application/json"></label></div></div>
+      <div class="table-wrap"><table><thead><tr><th>日期</th><th>方向</th><th>股票</th><th>金额</th><th>成交价</th><th>份额</th><th>费用</th><th>操作</th></tr></thead><tbody id="tradesBody"></tbody></table></div>
+      <p class="privacy-note">真实交易仅保存在当前浏览器，不会上传到 GitHub。换设备或清除浏览器数据前，请先导出备份。</p>
+    </section>
+  </main>
+  <footer>仅作研究和决策辅助，不构成投资建议。市场价格可能延迟，请以券商成交记录为准。</footer>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="assets/js/supabase-config.js?v=1" defer></script>
+  <script src="assets/js/advisor.js?v=2" defer></script>
+</body>
+</html>

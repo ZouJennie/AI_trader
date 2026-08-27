@@ -1,0 +1,33 @@
+{
+  "currency": "USD",
+  "default_product": "real_stock",
+  "real_stock": {
+    "commission_mode": "max_fixed_or_rate",
+    "open_fixed_usd": 1.0,
+    "close_fixed_usd": 1.0,
+    "open_rate": 0.0,
+    "close_rate": 0.0,
+    "minimum_trade_usd": 10.0,
+    "max_estimated_round_trip_cost_pct": 0.025
+  },
+  "etf": {
+    "commission_mode": "max_fixed_or_rate",
+    "open_fixed_usd": 0.0,
+    "close_fixed_usd": 0.0,
+    "open_rate": 0.0,
+    "close_rate": 0.0,
+    "minimum_trade_usd": 10.0,
+    "max_estimated_round_trip_cost_pct": 0.02
+  },
+  "stock_cfd": {
+    "commission_mode": "max_fixed_or_rate",
+    "open_fixed_usd": 0.0,
+    "close_fixed_usd": 0.0,
+    "open_rate": 0.0015,
+    "close_rate": 0.0015,
+    "minimum_trade_usd": 10.0,
+    "max_estimated_round_trip_cost_pct": 0.02,
+    "annual_overnight_base_rate": 0.064,
+    "annual_benchmark_rate": 0.0
+  }
+}
