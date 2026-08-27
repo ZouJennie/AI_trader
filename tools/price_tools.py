@@ -14,6 +14,7 @@ project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if project_root not in sys.path:
     sys.path.insert(0, project_root)
 from tools.general_tools import get_config_value
+from tools.universe import US_STOCK_UNIVERSE
 
 all_nasdaq_100_symbols = [
     "NVDA",
@@ -118,6 +119,7 @@ all_nasdaq_100_symbols = [
     "CDW",
     "GFS",
 ]
+all_nasdaq_100_symbols = US_STOCK_UNIVERSE
 
 all_sse_50_symbols = [
     "600519.SH",
@@ -468,6 +470,10 @@ def get_open_prices(
             if not isinstance(series, dict):
                 continue
             bar = series.get(today_date)
+            if bar is None and " " not in today_date:
+                matching = [key for key in series if str(key).startswith(today_date)]
+                if matching:
+                    bar = series[max(matching)]
             
             if isinstance(bar, dict):
                 open_val = bar.get("1. buy price")

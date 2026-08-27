@@ -7,6 +7,14 @@ from datetime import datetime, timedelta
 load_dotenv()
 import json
 
+from pathlib import Path
+import sys
+
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+from tools.universe import US_STOCK_UNIVERSE
+
 all_nasdaq_100_symbols = [
     "NVDA",
     "MSFT",
@@ -110,6 +118,7 @@ all_nasdaq_100_symbols = [
     "CDW",
     "GFS",
 ]
+all_nasdaq_100_symbols = US_STOCK_UNIVERSE
 
 
 

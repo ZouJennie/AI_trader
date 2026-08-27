@@ -28,6 +28,8 @@
 6. 保存公开建议历史（真实持仓不会提交到仓库）；
 7. 发布 `docs/` 到 GitHub Pages。
 
+当前研究池固定为 25 只 Nasdaq-100 个股，定义在 `tools/universe.py`。筛选侧重大型、流动性、商业质量与行业覆盖；减少模型在 100 个名字之间漂移。行情以 Yahoo 为主源，Alpha Vantage 仅补抓缺失标的，因此不会日常耗尽免费 25 次额度。
+
 首次部署也可以在 **Actions → Daily advisor and GitHub Pages → Run workflow** 手动触发。
 
 ## 3. 配置私有持仓同步

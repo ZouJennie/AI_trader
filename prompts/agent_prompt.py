@@ -14,6 +14,7 @@ from tools.price_tools import get_yesterday_date, get_open_prices, get_yesterday
 from tools.general_tools import get_config_value
 from tools.fee_tools import fee_summary
 from tools.actual_ledger import summarize_ledger
+from tools.universe import US_STOCK_UNIVERSE
 
 
 INVESTMENT_POLICY_PATH = Path(project_root) / "configs" / "investment_policy.json"
@@ -23,19 +24,7 @@ def get_investment_policy() -> Dict:
     with INVESTMENT_POLICY_PATH.open("r", encoding="utf-8") as handle:
         return json.load(handle)
 
-all_nasdaq_100_symbols = [
-    "NVDA", "MSFT", "AAPL", "GOOG", "GOOGL", "AMZN", "META", "AVGO", "TSLA",
-    "NFLX", "PLTR", "COST", "ASML", "AMD", "CSCO", "AZN", "TMUS", "MU", "LIN",
-    "PEP", "SHOP", "APP", "INTU", "AMAT", "LRCX", "PDD", "QCOM", "ARM", "INTC",
-    "BKNG", "AMGN", "TXN", "ISRG", "GILD", "KLAC", "PANW", "ADBE", "HON",
-    "CRWD", "CEG", "ADI", "ADP", "DASH", "CMCSA", "VRTX", "MELI", "SBUX",
-    "CDNS", "ORLY", "SNPS", "MSTR", "MDLZ", "ABNB", "MRVL", "CTAS", "TRI",
-    "MAR", "MNST", "CSX", "ADSK", "PYPL", "FTNT", "AEP", "WDAY", "REGN", "ROP",
-    "NXPI", "DDOG", "AXON", "ROST", "IDXX", "EA", "PCAR", "FAST", "EXC", "TTWO",
-    "XEL", "ZS", "PAYX", "WBD", "BKR", "CPRT", "CCEP", "FANG", "TEAM", "CHTR",
-    "KDP", "MCHP", "GEHC", "VRSK", "CTSH", "CSGP", "KHC", "ODFL", "DXCM", "TTD",
-    "ON", "BIIB", "LULU", "CDW", "GFS"
-]
+all_nasdaq_100_symbols = US_STOCK_UNIVERSE
 
 STOP_SIGNAL = "<FINISH_SIGNAL>"
 

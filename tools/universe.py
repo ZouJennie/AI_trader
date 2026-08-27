@@ -1,0 +1,30 @@
+"""Canonical, deliberately small US-stock research universe."""
+
+US_STOCK_UNIVERSE = [
+    "AAPL",
+    "MSFT",
+    "NVDA",
+    "GOOGL",
+    "AMZN",
+    "META",
+    "AVGO",
+    "AMD",
+    "ASML",
+    "AMAT",
+    "LRCX",
+    "QCOM",
+    "PANW",
+    "INTU",
+    "ADBE",
+    "COST",
+    "BKNG",
+    "PEP",
+    "WMT",
+    "ISRG",
+    "VRTX",
+    "AMGN",
+    "TMUS",
+    "CSX",
+    "LIN",
+]
+

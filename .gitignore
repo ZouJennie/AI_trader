@@ -5,6 +5,7 @@ data/agent_data/
 data/agent_data_astock/
 data/A_stock/
 data/cache/
+.yfinance-cache/
 __pycache__/
 *.pyc
 *.pyo
