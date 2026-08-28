@@ -7,7 +7,7 @@ from zoneinfo import ZoneInfo
 
 from scripts.daily_run_gate import should_run
 from scripts.export_advisor_site import extract_prices, latest_recommendations
-from scripts.validate_market_snapshot import current_symbols
+from scripts.validate_market_snapshot import current_symbols, rejection_reason
 
 
 class AdvisorSiteTests(unittest.TestCase):
@@ -56,7 +56,13 @@ class AdvisorSiteTests(unittest.TestCase):
             ]
             path.write_text("\n".join(json.dumps(item) for item in documents), encoding="utf-8")
             result = current_symbols(path, "2026-08-27")
-        self.assertEqual(result, {"AAPL"})
+            self.assertEqual(result, {"AAPL"})
+
+    def test_market_snapshot_explains_premarket_rejection(self):
+        before_open = datetime(2026, 8, 28, 7, 43, tzinfo=ZoneInfo("UTC"))
+        reason = rejection_reason("2026-08-28", before_open)
+        self.assertIn("09:35", reason)
+        self.assertIn("03:43", reason)
 
 
 if __name__ == "__main__":

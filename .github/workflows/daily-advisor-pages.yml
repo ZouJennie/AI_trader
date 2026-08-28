@@ -119,6 +119,7 @@ jobs:
           for log in logs/*.log; do
             test -f "$log" && { echo "===== $log ====="; cat "$log"; }
           done
+          true
 
       - name: Export site data
         if: success()
