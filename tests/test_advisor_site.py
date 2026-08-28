@@ -5,7 +5,7 @@ from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-from scripts.daily_run_gate import should_run
+from scripts.daily_run_gate import has_recommendation_for_date, should_run
 from scripts.export_advisor_site import extract_prices, latest_recommendations
 from scripts.validate_market_snapshot import current_symbols, rejection_reason
 
@@ -57,6 +57,20 @@ class AdvisorSiteTests(unittest.TestCase):
         self.assertTrue(should_run("schedule", winter))
         self.assertFalse(should_run("schedule", wrong_winter_slot))
         self.assertTrue(should_run("workflow_dispatch", wrong_winter_slot))
+
+    def test_schedule_gate_accepts_delayed_market_hour_retry_only_once(self):
+        delayed = datetime(2026, 8, 27, 18, 45, tzinfo=ZoneInfo("UTC"))
+        after_close = datetime(2026, 8, 27, 20, 1, tzinfo=ZoneInfo("UTC"))
+        self.assertTrue(should_run("schedule", delayed, already_generated=False))
+        self.assertFalse(should_run("schedule", delayed, already_generated=True))
+        self.assertFalse(should_run("schedule", after_close, already_generated=False))
+
+    def test_schedule_gate_detects_existing_daily_recommendation(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "recommendations.jsonl"
+            path.write_text(json.dumps({"date": "2026-08-28", "content": "DECISION: HOLD"}), encoding="utf-8")
+            self.assertTrue(has_recommendation_for_date(path, "2026-08-28"))
+            self.assertFalse(has_recommendation_for_date(path, "2026-08-29"))
 
     def test_market_snapshot_ignores_stale_symbols(self):
         with tempfile.TemporaryDirectory() as directory:

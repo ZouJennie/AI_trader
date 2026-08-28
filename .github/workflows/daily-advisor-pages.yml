@@ -5,10 +5,10 @@ on:
     branches: [main, master]
   workflow_dispatch:
   schedule:
-    # GitHub cron uses UTC. Two entries cover New York daylight/standard time;
-    # daily_run_gate.py permits only the invocation that is 10:xx in New York.
-    - cron: "15 14 * * 1-5"
-    - cron: "15 15 * * 1-5"
+    # GitHub schedule delivery is best-effort and can be delayed or dropped.
+    # Hourly UTC retries cover 10:23-15:23 New York in both EDT and EST;
+    # daily_run_gate.py stops retries after one recommendation is published.
+    - cron: "23 14-20 * * 1-5"
 
 permissions:
   contents: write
@@ -28,6 +28,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
+      - name: Sync latest advice before a scheduled retry
+        if: github.event_name == 'schedule'
+        run: git pull --ff-only origin "$GITHUB_REF_NAME"
+
       - name: Set up Python
         uses: actions/setup-python@v6
         with:
@@ -39,6 +43,10 @@ jobs:
         env:
           GITHUB_EVENT_NAME: ${{ github.event_name }}
         run: python scripts/daily_run_gate.py >> "$GITHUB_OUTPUT"
+
+      - name: Report skipped scheduled retry
+        if: github.event_name == 'schedule' && steps.gate.outputs.run != 'true'
+        run: echo "Scheduled retry skipped (${{ steps.gate.outputs.reason }})."
 
       - name: Install runtime dependencies
         if: steps.gate.outputs.run == 'true'
