@@ -1,413 +1,121 @@
 {
-  "generated_at": "2026-08-27T07:41:54.375435-04:00",
+  "generated_at": "2026-08-28T14:56:33.849821-04:00",
   "model": "deepseek-v4-flash",
   "initial_cash": 200.0,
-  "latest": null,
-  "history": [],
+  "latest": {
+    "date": "2026-08-28",
+    "content": "DECISION: BUY\nSYMBOL: NVDA\nTARGET_AMOUNT_USD: 80\nHORIZON_MONTHS: 12\nCONFIDENCE: 0.78\nENTRY_GATE: PASS\nFUNDAMENTAL_GATE: PASS\nSEC_RISK_GATE: PASS\nTREND_GATE: PASS\nPRICE_VS_SMA20_PCT: 0.07\nFAIR_VALUE_RANGE_USD: 245-285\nMARGIN_OF_SAFETY_PCT: 17.3\nEXPECTED_GROSS_UPSIDE_PCT: 17.3\nROUND_TRIP_COST_PCT: 2.50\nEXPECTED_NET_UPSIDE_PCT: 14.80\nTHESIS: NVDA reported blowout Q2 FY27 (quarter ended 7/26/26): revenue $96.2B (+106% YoY, +18% QoQ), 75.0% GAAP/non-GAAP gross margin, non-GAAP EPS $2.22, Vera Rubin in full production, and a strong (\"bumper\") Q3 revenue forecast that lifted tech on 8/27. Today's ~4.7% gap down to $217.36 (back at SMA20) is sentiment-driven (\"circular financing\" worries around disclosed OpenAI lease guarantees), not operational deterioration. At ~23x forward non-GAAP EPS (~$9.3 FY27E), valuation is reasonable vs history; conservative 27x target implies ~$255 fair value. All five entry gates pass: fundamental (durable AI compute moat, no guidance deterioration), SEC (no confirmed material events), trend (above SMA50/200, no confirmed major break, +0.07% vs SMA20), margin of safety (17.3%), and net upside (14.8% after $2 round-trip on $80 = 2.5%). Fresh account with $200 cash; one $80 position fits policy (max 2 positions, $20 reserve). Advisory mode: no order executed.\nRISKS: Circular-financing/OpenAI lease-guarantee scrutiny could pressure the multiple; hot July PCE (3.7%) keeps rate pressure on high-multiple tech; AI capex digestion or order cancellations; China export restrictions; AMD/custom-silicon competition; post-earnings volatility (volume was 2.56x average on 8/27).\nINVALIDATION: Confirmed major trend break (2 consecutive closes below SMA50 with abnormal volume); material guidance cut or gross margin falling below ~70%; new material accounting/legal/regulatory/solvency event in SEC filings; OpenAI lease guarantees converting into realized material losses; fundamentals/guidance materially deteriorating.\nOFFICIAL_EVIDENCE: NVDA 10-Q (8/26/2026, 0001045810-26-000075); NVDA 8-K results (8/26/2026, 0001045810-26-000073); NVDA 8-K OpenAI lease agreements (8/17/2026, 0001045810-26-000069); NVDA 10-Q (5/20/2026, 0001045810-26-000052); NVDA 8-K results (5/20/2026, 0001045810-26-000051); 8-Ks 6/18 and 6/30/2026. All \"critical\" text matches are standard boilerplate (MD&A, risk factors, indemnification), not confirmed material events.\nTREND_CONFIRMATION: Close 8/27 $227.98 vs SMA20 $217.21 (+4.96% at prior close); SMA50 $208.16, SMA200 $195.73; price above all three. MACD 2.48 vs signal 2.96 (histogram -0.48, bearish but improving - confirmation only, not sole trigger). Volume 8/27 was 2.56x average (earnings-driven, abnormal). Today's open $217.36 retests SMA20; 0 consecutive closes below SMA50; confirmed_major_trend_break = false.\nDATA_AS_OF: 2026-08-28\n<FINISH_SIGNAL>",
+    "model": "deepseek-v4-flash",
+    "execution_mode": "advisory"
+  },
+  "history": [
+    {
+      "date": "2026-08-28",
+      "content": "DECISION: BUY\nSYMBOL: NVDA\nTARGET_AMOUNT_USD: 80\nHORIZON_MONTHS: 12\nCONFIDENCE: 0.78\nENTRY_GATE: PASS\nFUNDAMENTAL_GATE: PASS\nSEC_RISK_GATE: PASS\nTREND_GATE: PASS\nPRICE_VS_SMA20_PCT: 0.07\nFAIR_VALUE_RANGE_USD: 245-285\nMARGIN_OF_SAFETY_PCT: 17.3\nEXPECTED_GROSS_UPSIDE_PCT: 17.3\nROUND_TRIP_COST_PCT: 2.50\nEXPECTED_NET_UPSIDE_PCT: 14.80\nTHESIS: NVDA reported blowout Q2 FY27 (quarter ended 7/26/26): revenue $96.2B (+106% YoY, +18% QoQ), 75.0% GAAP/non-GAAP gross margin, non-GAAP EPS $2.22, Vera Rubin in full production, and a strong (\"bumper\") Q3 revenue forecast that lifted tech on 8/27. Today's ~4.7% gap down to $217.36 (back at SMA20) is sentiment-driven (\"circular financing\" worries around disclosed OpenAI lease guarantees), not operational deterioration. At ~23x forward non-GAAP EPS (~$9.3 FY27E), valuation is reasonable vs history; conservative 27x target implies ~$255 fair value. All five entry gates pass: fundamental (durable AI compute moat, no guidance deterioration), SEC (no confirmed material events), trend (above SMA50/200, no confirmed major break, +0.07% vs SMA20), margin of safety (17.3%), and net upside (14.8% after $2 round-trip on $80 = 2.5%). Fresh account with $200 cash; one $80 position fits policy (max 2 positions, $20 reserve). Advisory mode: no order executed.\nRISKS: Circular-financing/OpenAI lease-guarantee scrutiny could pressure the multiple; hot July PCE (3.7%) keeps rate pressure on high-multiple tech; AI capex digestion or order cancellations; China export restrictions; AMD/custom-silicon competition; post-earnings volatility (volume was 2.56x average on 8/27).\nINVALIDATION: Confirmed major trend break (2 consecutive closes below SMA50 with abnormal volume); material guidance cut or gross margin falling below ~70%; new material accounting/legal/regulatory/solvency event in SEC filings; OpenAI lease guarantees converting into realized material losses; fundamentals/guidance materially deteriorating.\nOFFICIAL_EVIDENCE: NVDA 10-Q (8/26/2026, 0001045810-26-000075); NVDA 8-K results (8/26/2026, 0001045810-26-000073); NVDA 8-K OpenAI lease agreements (8/17/2026, 0001045810-26-000069); NVDA 10-Q (5/20/2026, 0001045810-26-000052); NVDA 8-K results (5/20/2026, 0001045810-26-000051); 8-Ks 6/18 and 6/30/2026. All \"critical\" text matches are standard boilerplate (MD&A, risk factors, indemnification), not confirmed material events.\nTREND_CONFIRMATION: Close 8/27 $227.98 vs SMA20 $217.21 (+4.96% at prior close); SMA50 $208.16, SMA200 $195.73; price above all three. MACD 2.48 vs signal 2.96 (histogram -0.48, bearish but improving - confirmation only, not sole trigger). Volume 8/27 was 2.56x average (earnings-driven, abnormal). Today's open $217.36 retests SMA20; 0 consecutive closes below SMA50; confirmed_major_trend_break = false.\nDATA_AS_OF: 2026-08-28\n<FINISH_SIGNAL>",
+      "model": "deepseek-v4-flash",
+      "execution_mode": "advisory"
+    }
+  ],
   "prices": {
     "AAPL": {
-      "price": 270.715,
-      "timestamp": "2026-01-05"
-    },
-    "ABNB": {
-      "price": 133.1,
-      "timestamp": "2026-01-05"
+      "price": 319.25,
+      "timestamp": "2026-08-28"
     },
     "ADBE": {
-      "price": 329.98,
-      "timestamp": "2026-01-05"
-    },
-    "ADI": {
-      "price": 275.03,
-      "timestamp": "2026-01-05"
-    },
-    "ADP": {
-      "price": 252.69,
-      "timestamp": "2026-01-05"
-    },
-    "ADSK": {
-      "price": 287.17,
-      "timestamp": "2026-01-05"
-    },
-    "AEP": {
-      "price": 115.57,
-      "timestamp": "2026-01-05"
+      "price": 291.675,
+      "timestamp": "2026-08-28"
     },
     "AMAT": {
-      "price": 276.12,
-      "timestamp": "2026-01-05"
+      "price": 461.52,
+      "timestamp": "2026-08-28"
     },
     "AMD": {
-      "price": 230.315,
-      "timestamp": "2026-01-05"
+      "price": 469.18,
+      "timestamp": "2026-08-28"
     },
     "AMGN": {
-      "price": 325.17,
-      "timestamp": "2026-01-05"
+      "price": 431.37,
+      "timestamp": "2026-08-28"
     },
     "AMZN": {
-      "price": 228.865,
-      "timestamp": "2026-01-05"
-    },
-    "APP": {
-      "price": 616.6817,
-      "timestamp": "2026-01-05"
-    },
-    "ARM": {
-      "price": 120.54,
-      "timestamp": "2026-01-05"
+      "price": 265.18,
+      "timestamp": "2026-08-28"
     },
     "ASML": {
-      "price": 1211.67,
-      "timestamp": "2026-01-05"
+      "price": 1700.022,
+      "timestamp": "2026-08-28"
     },
     "AVGO": {
-      "price": 354.74,
-      "timestamp": "2026-01-05"
-    },
-    "AXON": {
-      "price": 569.65,
-      "timestamp": "2026-01-05"
-    },
-    "AZN": {
-      "price": 91.165,
-      "timestamp": "2026-01-05"
-    },
-    "BIIB": {
-      "price": 176.095,
-      "timestamp": "2026-01-05"
+      "price": 367.37,
+      "timestamp": "2026-08-28"
     },
     "BKNG": {
-      "price": 5300.0698,
-      "timestamp": "2026-01-05"
-    },
-    "BKR": {
-      "price": 49.44,
-      "timestamp": "2026-01-05"
-    },
-    "CCEP": {
-      "price": 87.89,
-      "timestamp": "2026-01-05"
-    },
-    "CDNS": {
-      "price": 311.24,
-      "timestamp": "2026-01-05"
-    },
-    "CDW": {
-      "price": 133.16,
-      "timestamp": "2026-01-05"
-    },
-    "CEG": {
-      "price": 371.565,
-      "timestamp": "2026-01-05"
-    },
-    "CHTR": {
-      "price": 209.47,
-      "timestamp": "2026-01-05"
-    },
-    "CMCSA": {
-      "price": 27.73,
-      "timestamp": "2026-01-05"
+      "price": 204.72,
+      "timestamp": "2026-08-28"
     },
     "COST": {
-      "price": 863.63,
-      "timestamp": "2026-01-05"
-    },
-    "CPRT": {
-      "price": 37.56,
-      "timestamp": "2026-01-05"
-    },
-    "CRWD": {
-      "price": 458.4,
-      "timestamp": "2026-01-05"
-    },
-    "CSCO": {
-      "price": 76.45,
-      "timestamp": "2026-01-05"
-    },
-    "CSGP": {
-      "price": 65.6,
-      "timestamp": "2026-01-05"
+      "price": 945.45,
+      "timestamp": "2026-08-28"
     },
     "CSX": {
-      "price": 36.09,
-      "timestamp": "2026-01-05"
-    },
-    "CTAS": {
-      "price": 184.15,
-      "timestamp": "2026-01-05"
-    },
-    "CTSH": {
-      "price": 81.04,
-      "timestamp": "2026-01-05"
-    },
-    "DASH": {
-      "price": 220.52,
-      "timestamp": "2026-01-05"
-    },
-    "DDOG": {
-      "price": 132.92,
-      "timestamp": "2026-01-05"
-    },
-    "DXCM": {
-      "price": 66.64,
-      "timestamp": "2026-01-05"
-    },
-    "EA": {
-      "price": 204.38,
-      "timestamp": "2026-01-05"
-    },
-    "EXC": {
-      "price": 43.86,
-      "timestamp": "2026-01-05"
-    },
-    "FANG": {
-      "price": 153.73,
-      "timestamp": "2026-01-05"
-    },
-    "FAST": {
-      "price": 40.38,
-      "timestamp": "2026-01-05"
-    },
-    "FTNT": {
-      "price": 78.53,
-      "timestamp": "2026-01-05"
-    },
-    "GEHC": {
-      "price": 82.79,
-      "timestamp": "2026-01-05"
-    },
-    "GFS": {
-      "price": 37.49,
-      "timestamp": "2026-01-05"
-    },
-    "GILD": {
-      "price": 120.77,
-      "timestamp": "2026-01-05"
-    },
-    "GOOG": {
-      "price": 317.71,
-      "timestamp": "2026-01-05"
+      "price": 51.295,
+      "timestamp": "2026-08-28"
     },
     "GOOGL": {
-      "price": 317.605,
-      "timestamp": "2026-01-05"
-    },
-    "HON": {
-      "price": 194.95,
-      "timestamp": "2026-01-05"
-    },
-    "IDXX": {
-      "price": 670.21,
-      "timestamp": "2026-01-05"
-    },
-    "INTC": {
-      "price": 41.59,
-      "timestamp": "2026-01-05"
+      "price": 346.65,
+      "timestamp": "2026-08-28"
     },
     "INTU": {
-      "price": 629.46,
-      "timestamp": "2026-01-05"
+      "price": 355.66,
+      "timestamp": "2026-08-28"
     },
     "ISRG": {
-      "price": 560.69,
-      "timestamp": "2026-01-05"
-    },
-    "KDP": {
-      "price": 27.64,
-      "timestamp": "2026-01-05"
-    },
-    "KHC": {
-      "price": 24.31,
-      "timestamp": "2026-01-05"
-    },
-    "KLAC": {
-      "price": 1309.97,
-      "timestamp": "2026-01-05"
+      "price": 372.3365,
+      "timestamp": "2026-08-28"
     },
     "LIN": {
-      "price": 425.57,
-      "timestamp": "2026-01-05"
+      "price": 488.115,
+      "timestamp": "2026-08-28"
     },
     "LRCX": {
-      "price": 190.12,
-      "timestamp": "2026-01-05"
-    },
-    "LULU": {
-      "price": 211.96,
-      "timestamp": "2026-01-05"
-    },
-    "MAR": {
-      "price": 311.82,
-      "timestamp": "2026-01-05"
-    },
-    "MCHP": {
-      "price": 65.35,
-      "timestamp": "2026-01-05"
-    },
-    "MDLZ": {
-      "price": 53.36,
-      "timestamp": "2026-01-05"
-    },
-    "MELI": {
-      "price": 2011.9399,
-      "timestamp": "2026-01-05"
+      "price": 303.98,
+      "timestamp": "2026-08-28"
     },
     "META": {
-      "price": 650.41,
-      "timestamp": "2026-01-05"
-    },
-    "MNST": {
-      "price": 76.18,
-      "timestamp": "2026-01-05"
-    },
-    "MRVL": {
-      "price": 93.018,
-      "timestamp": "2026-01-05"
+      "price": 574.625,
+      "timestamp": "2026-08-28"
     },
     "MSFT": {
-      "price": 473.95,
-      "timestamp": "2026-01-05"
-    },
-    "MSTR": {
-      "price": 163.29,
-      "timestamp": "2026-01-05"
-    },
-    "MU": {
-      "price": 325.514,
-      "timestamp": "2026-01-05"
-    },
-    "NFLX": {
-      "price": 90.914,
-      "timestamp": "2026-01-05"
+      "price": 514.365,
+      "timestamp": "2026-08-28"
     },
     "NVDA": {
-      "price": 191.715,
-      "timestamp": "2026-01-05"
-    },
-    "NXPI": {
-      "price": 221.85,
-      "timestamp": "2026-01-05"
-    },
-    "ODFL": {
-      "price": 159.02,
-      "timestamp": "2026-01-05"
-    },
-    "ON": {
-      "price": 57.52,
-      "timestamp": "2026-01-05"
-    },
-    "ORLY": {
-      "price": 89.42,
-      "timestamp": "2026-01-05"
+      "price": 217.3569,
+      "timestamp": "2026-08-28"
     },
     "PANW": {
-      "price": 182.705,
-      "timestamp": "2026-01-05"
-    },
-    "PAYX": {
-      "price": 108.6,
-      "timestamp": "2026-01-05"
-    },
-    "PCAR": {
-      "price": 111.53,
-      "timestamp": "2026-01-05"
-    },
-    "PDD": {
-      "price": 117.605,
-      "timestamp": "2026-01-05"
+      "price": 370.36,
+      "timestamp": "2026-08-28"
     },
     "PEP": {
-      "price": 141.65,
-      "timestamp": "2026-01-05"
-    },
-    "PLTR": {
-      "price": 174.871,
-      "timestamp": "2026-01-05"
-    },
-    "PYPL": {
-      "price": 58.0,
-      "timestamp": "2026-01-05"
+      "price": 140.88,
+      "timestamp": "2026-08-28"
     },
     "QCOM": {
-      "price": 175.46,
-      "timestamp": "2026-01-05"
-    },
-    "REGN": {
-      "price": 771.99,
-      "timestamp": "2026-01-05"
-    },
-    "ROP": {
-      "price": 429.63,
-      "timestamp": "2026-01-05"
-    },
-    "ROST": {
-      "price": 182.9,
-      "timestamp": "2026-01-05"
-    },
-    "SBUX": {
-      "price": 83.5,
-      "timestamp": "2026-01-05"
-    },
-    "SHOP": {
-      "price": 158.84,
-      "timestamp": "2026-01-05"
-    },
-    "SNPS": {
-      "price": 485.03,
-      "timestamp": "2026-01-05"
-    },
-    "TEAM": {
-      "price": 154.88,
-      "timestamp": "2026-01-05"
+      "price": 162.865,
+      "timestamp": "2026-08-28"
     },
     "TMUS": {
-      "price": 199.165,
-      "timestamp": "2026-01-05"
-    },
-    "TRI": {
-      "price": 127.11,
-      "timestamp": "2026-01-05"
-    },
-    "TSLA": {
-      "price": 447.72,
-      "timestamp": "2026-01-05"
-    },
-    "TTD": {
-      "price": 37.95,
-      "timestamp": "2026-01-05"
-    },
-    "TTWO": {
-      "price": 252.43,
-      "timestamp": "2026-01-05"
-    },
-    "TXN": {
-      "price": 178.02,
-      "timestamp": "2026-01-05"
-    },
-    "VRSK": {
-      "price": 220.21,
-      "timestamp": "2026-01-05"
+      "price": 181.1101,
+      "timestamp": "2026-08-28"
     },
     "VRTX": {
-      "price": 448.83,
-      "timestamp": "2026-01-05"
+      "price": 540.13,
+      "timestamp": "2026-08-28"
     },
-    "WBD": {
-      "price": 28.51,
-      "timestamp": "2026-01-05"
-    },
-    "WDAY": {
-      "price": 206.25,
-      "timestamp": "2026-01-05"
-    },
-    "XEL": {
-      "price": 74.44,
-      "timestamp": "2026-01-05"
-    },
-    "ZS": {
-      "price": 221.71,
-      "timestamp": "2026-01-05"
+    "WMT": {
+      "price": 102.975,
+      "timestamp": "2026-08-28"
     }
   }
 }
