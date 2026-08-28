@@ -86,9 +86,16 @@ jobs:
           JINA_API_KEY: ${{ secrets.JINA_API_KEY }}
           SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
         run: |
-          python agent_tools/start_mcp_services.py > service-manager.log 2>&1 &
+          python -u agent_tools/start_mcp_services.py > service-manager.log 2>&1 &
           echo $! > service-manager.pid
-          sleep 8
+          if ! python agent_tools/start_mcp_services.py wait; then
+            echo "MCP services did not become ready. Startup logs:"
+            cat service-manager.log || true
+            for log in logs/*.log; do
+              test -f "$log" && { echo "===== $log ====="; cat "$log"; }
+            done
+            exit 1
+          fi
 
       - name: Generate daily recommendation
         if: steps.gate.outputs.run == 'true'
@@ -104,6 +111,14 @@ jobs:
         if: always() && steps.gate.outputs.run == 'true'
         run: |
           if test -f service-manager.pid; then kill "$(cat service-manager.pid)" 2>/dev/null || true; fi
+
+      - name: Show analysis service logs on failure
+        if: failure() && steps.gate.outputs.run == 'true'
+        run: |
+          cat service-manager.log 2>/dev/null || true
+          for log in logs/*.log; do
+            test -f "$log" && { echo "===== $log ====="; cat "$log"; }
+          done
 
       - name: Export site data
         if: success()

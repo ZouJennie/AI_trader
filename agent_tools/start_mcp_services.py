@@ -14,7 +14,15 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
-load_dotenv()
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8")
+
+SCRIPT_DIR = Path(__file__).resolve().parent
+PROJECT_ROOT = SCRIPT_DIR.parent
+
+load_dotenv(PROJECT_ROOT / ".env")
 
 
 class MCPServiceManager:
@@ -33,16 +41,32 @@ class MCPServiceManager:
 
         # Service configurations
         self.service_configs = {
-            "math": {"script": "tool_math.py", "name": "Math", "port": self.ports["math"]},
-            "search": {"script": "tool_jina_search.py", "name": "Search", "port": self.ports["search"]},
-            "trade": {"script": "tool_trade.py", "name": "TradeTools", "port": self.ports["trade"]},
-            "price": {"script": "tool_get_price_local.py", "name": "LocalPrices", "port": self.ports["price"]},
-            "sec": {"script": "tool_sec_filings.py", "name": "SEC Filings", "port": self.ports["sec"]},
+            "math": {"script": SCRIPT_DIR / "tool_math.py", "name": "Math", "port": self.ports["math"]},
+            "search": {
+                "script": SCRIPT_DIR / "tool_jina_search.py",
+                "name": "Search",
+                "port": self.ports["search"],
+            },
+            "trade": {
+                "script": SCRIPT_DIR / "tool_trade.py",
+                "name": "TradeTools",
+                "port": self.ports["trade"],
+            },
+            "price": {
+                "script": SCRIPT_DIR / "tool_get_price_local.py",
+                "name": "LocalPrices",
+                "port": self.ports["price"],
+            },
+            "sec": {
+                "script": SCRIPT_DIR / "tool_sec_filings.py",
+                "name": "SEC Filings",
+                "port": self.ports["sec"],
+            },
         }
 
         # Create logs directory
-        self.log_dir = Path("../logs")
-        self.log_dir.mkdir(exist_ok=True)
+        self.log_dir = PROJECT_ROOT / "logs"
+        self.log_dir.mkdir(parents=True, exist_ok=True)
 
         # Set signal handlers
         signal.signal(signal.SIGINT, self.signal_handler)
@@ -105,11 +129,11 @@ class MCPServiceManager:
 
     def start_service(self, service_id, config):
         """Start a single service"""
-        script_path = config["script"]
+        script_path = Path(config["script"])
         service_name = config["name"]
         port = config["port"]
 
-        if not Path(script_path).exists():
+        if not script_path.is_file():
             print(f"❌ Script file not found: {script_path}")
             return False
 
@@ -117,8 +141,19 @@ class MCPServiceManager:
             # Start service process
             log_file = self.log_dir / f"{service_id}.log"
             with open(log_file, "w") as f:
+                child_env = os.environ.copy()
+                existing_pythonpath = child_env.get("PYTHONPATH")
+                child_env["PYTHONPATH"] = (
+                    str(PROJECT_ROOT)
+                    if not existing_pythonpath
+                    else str(PROJECT_ROOT) + os.pathsep + existing_pythonpath
+                )
                 process = subprocess.Popen(
-                    [sys.executable, script_path], stdout=f, stderr=subprocess.STDOUT, cwd=os.getcwd()
+                    [sys.executable, str(script_path)],
+                    stdout=f,
+                    stderr=subprocess.STDOUT,
+                    cwd=str(PROJECT_ROOT),
+                    env=child_env,
                 )
 
             self.services[service_id] = {"process": process, "name": service_name, "port": port, "log_file": log_file}
@@ -189,13 +224,14 @@ class MCPServiceManager:
         print("\n🔍 Checking service status...")
         healthy_count = self.check_all_services()
 
-        if healthy_count > 0:
+        expected_count = len(self.service_configs)
+        if healthy_count == expected_count:
             print(f"\n🎉 {healthy_count}/{len(self.services)} MCP services running!")
             self.print_service_info()
             # Keep running
             self.keep_alive()
         else:
-            print("\n❌ All services failed to start properly")
+            print(f"\n❌ Only {healthy_count}/{expected_count} MCP services started successfully")
             self.stop_all_services()
 
     def check_all_services(self):
@@ -268,15 +304,23 @@ class MCPServiceManager:
         print("📊 MCP Service Status Check")
         print("=" * 30)
 
-        for service_id, config in self.service_configs.items():
-            if service_id in self.services:
-                service = self.services[service_id]
-                if self.check_service_health(service_id):
-                    print(f"✅ {config['name']} service running normally (Port: {config['port']})")
-                else:
-                    print(f"❌ {config['name']} service abnormal (Port: {config['port']})")
+        healthy = 0
+        for config in self.service_configs.values():
+            if not self.is_port_available(config["port"]):
+                print(f"✅ {config['name']} service is listening (Port: {config['port']})")
+                healthy += 1
             else:
                 print(f"❌ {config['name']} service not started (Port: {config['port']})")
+        return healthy == len(self.service_configs)
+
+    def wait_until_ready(self, timeout=25):
+        """Wait until every configured MCP port accepts TCP connections."""
+        deadline = time.monotonic() + timeout
+        while time.monotonic() < deadline:
+            if all(not self.is_port_available(config["port"]) for config in self.service_configs.values()):
+                return True
+            time.sleep(1)
+        return self.status()
 
 
 def main():
@@ -284,7 +328,13 @@ def main():
     if len(sys.argv) > 1 and sys.argv[1] == "status":
         # Status check mode
         manager = MCPServiceManager()
-        manager.status()
+        raise SystemExit(0 if manager.status() else 1)
+    elif len(sys.argv) > 1 and sys.argv[1] == "wait":
+        manager = MCPServiceManager()
+        ready = manager.wait_until_ready()
+        if ready:
+            print("✅ All MCP services are ready")
+        raise SystemExit(0 if ready else 1)
     else:
         # Startup mode
         manager = MCPServiceManager()
