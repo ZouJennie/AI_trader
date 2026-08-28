@@ -69,11 +69,17 @@ jobs:
           python merge_jsonl.py
 
       - name: Reject incomplete or stale market snapshot
+        id: snapshot
         if: steps.gate.outputs.run == 'true'
+        continue-on-error: ${{ github.event_name == 'workflow_dispatch' }}
         run: python scripts/validate_market_snapshot.py --minimum-coverage 0.90
 
+      - name: Skip premarket manual run safely
+        if: github.event_name == 'workflow_dispatch' && steps.snapshot.outcome == 'failure'
+        run: echo "Manual run skipped because a current-session market snapshot is not available. Retry after 09:35 America/New_York."
+
       - name: Import private actual portfolio
-        if: steps.gate.outputs.run == 'true'
+        if: steps.gate.outputs.run == 'true' && steps.snapshot.outcome == 'success'
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
@@ -81,7 +87,7 @@ jobs:
         run: python scripts/import_actual_portfolio.py --date "$(TZ=America/New_York date +%F)"
 
       - name: Start analysis services
-        if: steps.gate.outputs.run == 'true'
+        if: steps.gate.outputs.run == 'true' && steps.snapshot.outcome == 'success'
         env:
           JINA_API_KEY: ${{ secrets.JINA_API_KEY }}
           SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
@@ -98,7 +104,7 @@ jobs:
           fi
 
       - name: Generate daily recommendation
-        if: steps.gate.outputs.run == 'true'
+        if: steps.gate.outputs.run == 'true' && steps.snapshot.outcome == 'success'
         env:
           OPENAI_API_BASE: https://api.deepseek.com/v1
           OPENAI_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
@@ -108,12 +114,12 @@ jobs:
         run: python scripts/run_daily_advisor.py --once
 
       - name: Stop analysis services
-        if: always() && steps.gate.outputs.run == 'true'
+        if: always() && steps.gate.outputs.run == 'true' && steps.snapshot.outcome == 'success'
         run: |
           if test -f service-manager.pid; then kill "$(cat service-manager.pid)" 2>/dev/null || true; fi
 
       - name: Show analysis service logs on failure
-        if: failure() && steps.gate.outputs.run == 'true'
+        if: failure() && steps.gate.outputs.run == 'true' && steps.snapshot.outcome == 'success'
         run: |
           cat service-manager.log 2>/dev/null || true
           for log in logs/*.log; do
@@ -126,7 +132,7 @@ jobs:
         run: python scripts/export_advisor_site.py
 
       - name: Persist public advice
-        if: steps.gate.outputs.run == 'true'
+        if: steps.gate.outputs.run == 'true' && steps.snapshot.outcome == 'success'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
