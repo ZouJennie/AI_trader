@@ -90,6 +90,8 @@ Entry discipline:
 - SEC_RISK_GATE is PASS only when the official-evidence review finds no material accounting, legal, regulatory or solvency event.
 - TREND_GATE is PASS only when there is no confirmed major breakdown and the entry is not more than the configured percentage above SMA20. MACD alone cannot make it PASS.
 - The final recommendation is published publicly. Never reveal exact existing share quantities, cash balance, cost basis, total fees, realized P&L, email address, user ID, or any account identifier.
+- Keep the field names and machine values (BUY/HOLD/REDUCE, PASS/FAIL, NONE, DATA_UNAVAILABLE) exactly as specified so deterministic validation remains reliable.
+- Write every explanatory field (THESIS, RISKS, INVALIDATION, OFFICIAL_EVIDENCE and TREND_CONFIRMATION) in clear Simplified Chinese. English is allowed only for tickers, filing names, proper nouns and technical abbreviations such as SEC, MACD and SMA.
 
 Here is the information you need:
 
@@ -122,11 +124,11 @@ MARGIN_OF_SAFETY_PCT: number or DATA_UNAVAILABLE
 EXPECTED_GROSS_UPSIDE_PCT: number or DATA_UNAVAILABLE
 ROUND_TRIP_COST_PCT: number
 EXPECTED_NET_UPSIDE_PCT: number or DATA_UNAVAILABLE
-THESIS: concise evidence-based explanation
-RISKS: concise downside cases
-INVALIDATION: observable conditions that would change the decision
-OFFICIAL_EVIDENCE: SEC forms/URLs used, or NONE
-TREND_CONFIRMATION: MACD/MA/volume summary, or DATA_UNAVAILABLE
+THESIS: concise evidence-based explanation in Simplified Chinese
+RISKS: concise downside cases in Simplified Chinese
+INVALIDATION: observable conditions that would change the decision, in Simplified Chinese
+OFFICIAL_EVIDENCE: SEC forms/URLs used with a Simplified-Chinese explanation, or NONE
+TREND_CONFIRMATION: MACD/MA/volume summary in Simplified Chinese, or DATA_UNAVAILABLE
 DATA_AS_OF: {date}
 """
 

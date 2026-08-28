@@ -35,6 +35,18 @@ function setText(id, value){ $(id).textContent = value; }
 function signedMoney(value){ return `${value >= 0 ? "+" : "-"}${money(Math.abs(value))}`; }
 function setGainClass(element, value){ element.classList.remove("positive","negative"); element.classList.add(value >= 0 ? "positive" : "negative"); }
 
+const ADVICE_LABELS={DECISION:"投资结论",SYMBOL:"股票代码",TARGET_AMOUNT_USD:"建议投入金额（美元）",HORIZON_MONTHS:"预计持有期（月）",CONFIDENCE:"置信度",ENTRY_GATE:"综合买入门槛",FUNDAMENTAL_GATE:"基本面门槛",SEC_RISK_GATE:"SEC 风险门槛",TREND_GATE:"趋势门槛",PRICE_VS_SMA20_PCT:"价格相对 SMA20（%）",FAIR_VALUE_RANGE_USD:"合理价值区间（美元）",MARGIN_OF_SAFETY_PCT:"安全边际（%）",EXPECTED_GROSS_UPSIDE_PCT:"预期毛上涨空间（%）",ROUND_TRIP_COST_PCT:"往返交易成本（%）",EXPECTED_NET_UPSIDE_PCT:"扣费后预期上涨空间（%）",THESIS:"投资逻辑",RISKS:"主要风险",INVALIDATION:"逻辑失效条件",OFFICIAL_EVIDENCE:"官方证据",TREND_CONFIRMATION:"趋势确认",DATA_AS_OF:"数据截至"};
+const ADVICE_VALUES={BUY:"买入",HOLD:"观望/持有",REDUCE:"减仓",PASS:"通过",FAIL:"未通过",NONE:"无",DATA_UNAVAILABLE:"数据不可用"};
+function formatAdvice(item){
+  const raw=String(item?.content||"").replaceAll("<FINISH_SIGNAL>","").trim();
+  const translated=raw.split("\n").map(line=>{
+    const match=line.match(/^([A-Z][A-Z0-9_]*):\s*(.*)$/);if(!match)return line;
+    const label=ADVICE_LABELS[match[1]]||match[1];const value=ADVICE_VALUES[match[2]]||match[2];return `${label}：${value}`;
+  }).join("\n");
+  const execution=item?.execution_mode==="advisory"?"执行状态：仅提供投资建议，系统尚未自动下单；请按实际成交结果录入交易。":"执行状态：模拟交易模式";
+  return `${execution}\n\n${translated}`.trim();
+}
+
 function syncConfigured(){
   const config=window.AI_TRADER_SYNC_CONFIG||{};
   return /^https:\/\/.+\.supabase\.co$/.test(config.url||"") && /^(sb_publishable_|eyJ)/.test(config.publishableKey||"");
@@ -144,7 +156,7 @@ function renderAdvice(){
   if(latest){
     setText("adviceDate", latest.date || "最新");
     const content = $("adviceContent");
-    content.textContent = latest.content || "本次没有输出建议。";
+    content.textContent = formatAdvice(latest) || "本次没有输出建议。";
     content.classList.remove("empty");
   }
   const history = $("adviceHistory");
@@ -152,7 +164,7 @@ function renderAdvice(){
   (advice.history || []).slice().reverse().forEach(item => {
     const box = document.createElement("article"); box.className = "history-item";
     const date = document.createElement("strong"); date.textContent = item.date || "未知日期";
-    const body = document.createElement("pre"); body.textContent = item.content || "";
+    const body = document.createElement("pre"); body.textContent = formatAdvice(item);
     box.append(date, body); history.append(box);
   });
   if(!history.children.length) history.textContent = "暂无历史建议。";

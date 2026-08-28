@@ -421,7 +421,7 @@ class BaseAgent:
         )
 
         # Initial user query
-        user_query = [{"role": "user", "content": f"Please analyze and update today's ({today_date}) positions. "}]
+        user_query = [{"role": "user", "content": f"请分析 {today_date} 的市场快照和持仓，并用简体中文给出今日投资建议。"}]
         message = user_query.copy()
 
         # Log initial message
@@ -455,7 +455,10 @@ class BaseAgent:
         if self._has_trade_record(today_date):
             print("✅ Paper trading completed")
         else:
-            print("📊 Advisory/no-trade session, maintaining positions")
+            if self.execution_mode == "advisory":
+                print("📊 咨询模式：投资建议已保存；系统未自动下单，请在 eToro 实际成交后录入交易记录。")
+            else:
+                print("📊 本次没有产生模拟成交，持仓保持不变。")
             add_no_trade_record(today_date, self.signature)
         write_config_value("IF_TRADE", False)
 

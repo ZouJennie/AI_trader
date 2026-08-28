@@ -11,6 +11,7 @@ from zoneinfo import ZoneInfo
 
 
 ROOT = Path(__file__).resolve().parents[1]
+FINISH_SIGNAL = "<FINISH_SIGNAL>"
 
 
 def read_jsonl(path: Path) -> list[dict[str, Any]]:
@@ -34,13 +35,14 @@ def latest_recommendations(path: Path, limit: int = 90) -> list[dict[str, Any]]:
     by_date: dict[str, dict[str, Any]] = {}
     for record in read_jsonl(path):
         date = str(record.get("date", "")).strip()
-        content = str(record.get("content", "")).strip()
+        content = str(record.get("content", "")).replace(FINISH_SIGNAL, "").strip()
         if date and content:
             by_date[date] = {
                 "date": date,
                 "content": content,
                 "model": record.get("signature"),
                 "execution_mode": record.get("execution_mode", "advisory"),
+                "execution_status": "not_executed" if record.get("execution_mode", "advisory") == "advisory" else "paper_mode",
             }
     return [by_date[key] for key in sorted(by_date)[-limit:]]
 

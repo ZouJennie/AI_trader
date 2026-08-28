@@ -24,6 +24,17 @@ class AdvisorSiteTests(unittest.TestCase):
         self.assertEqual([item["date"] for item in result], ["2026-08-26", "2026-08-27"])
         self.assertEqual(result[0]["content"], "corrected")
 
+    def test_recommendation_export_removes_finish_signal_and_marks_advisory_status(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "recommendations.jsonl"
+            path.write_text(
+                json.dumps({"date": "2026-08-28", "content": "DECISION: BUY\n<FINISH_SIGNAL>", "execution_mode": "advisory"}),
+                encoding="utf-8",
+            )
+            result = latest_recommendations(path)
+        self.assertEqual(result[0]["content"], "DECISION: BUY")
+        self.assertEqual(result[0]["execution_status"], "not_executed")
+
     def test_latest_market_price_prefers_sell_price(self):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "merged.jsonl"
