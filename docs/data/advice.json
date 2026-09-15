@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-11T13:51:30.067092-04:00",
+  "generated_at": "2026-09-15T14:21:36.998810-04:00",
   "model": "deepseek-v4-flash",
   "initial_cash": 200.0,
   "latest": {
-    "date": "2026-09-11",
-    "content": "## 分析过程摘要\n\n**1) 组合与资金状态**：账户当前无任何持仓，全部为现金，未产生任何交易成本或已实现盈亏，因此不存在需要评估的行业暴露、集中度或 30 天最小持有期约束。政策规定单笔目标金额约 80 美元、最多 2 个持仓、须保留最低现金储备、且每日最多买入 1 次——在无合格标的时应保持现金。\n\n**2) 官方证据**：已核查 ADBE、AAPL、AMD、GOOGL 的 SEC 申报（8-K/10-Q）。检索返回的 `FINANCIAL_RESTATEMENT`、`MATERIAL_WEAKNESS`、`BANKRUPTCY_RISK` 等标记均来自标准模板措辞（如“Results of Operations and Financial Condition”、审计沟通条款、契约样板文字），未发现经证实的会计重述、监管处罚或偿付能力事件。ADBE 于 2026-09-10 的 8-K 为季度业绩发布：Q3 收入超预期，但 Q4 收入指引中值略低于市场预期。\n\n**3) 趋势筛选（数据截至 2026-09-10，买价为 09-11）**：\n- 通过「不高于 SMA20 8%」价格闸门的：ADBE（约 -7.2%）、AMGN、COST、GOOGL、AMAT、LRCX、PEP、BKNG、AAPL（+5.7%）、AMD（+7.5%）。\n- 未通过：META（+11.2%）、QCOM（+11.4%，因 9/8 亚马逊定制 AI 芯片消息跳涨）超过 8% 上限；ISRG 为工具确认的\"重大趋势破位\"（价格 360.46 对 SMA200 460.81，量比 1.53）。\n- 动量多头但无安全边际：AAPL（MACD 多头、柱状 +0.79 改善、量比 1.72）、AMD（MACD 多头、柱状 +5.79）。\n- 其余多数权重大盘股 MACD 空头且位于 SMA20/50 之下（GOOGL 连续 22 日收于 SMA50 下方、LIN 39 日、AMAT 34 日、COST、PEP、WMT、BKNG、INTU 均处于中长期均线下方），缺乏趋势确认。\n\n**4) 基本面与估值判断**：AAPL、AMD 通过价格闸门但处于或高于历史偏高估值区间，无法给出保守公允价值下 15% 的安全边际；ADBE 估值偏低（2026 年大幅回撤、街均目标远高于现价、250 亿美元回购），但刚因 Q4 收入指引中值略逊预期在 2.35 倍异常量下跳空下跌、MACD 空头且柱状走弱，叠加 AI 对创意软件护城河的长期威胁与 CFO 变动，基本面闸门与 0.75 置信度门槛均不能诚实通过。\n\n**5) 成本与执行**：按 80 美元仓位计算，往返固定费用合计 2 美元，约占仓位 2.5%，毛利上行必须超过该摩擦成本。今日为油价回落带动的普涨日（纳指 +1.22%），所有买价均高于昨收（普遍 +1%~+4.5%），叠加 8 月 CPI 环比 +0.4% 加速、9 月 15-16 日 FOMC 存在加息讨论，追高性价比低。\n\n**结论**：入场闸门为\"合取\"条件，任一不合格即不买入。当前没有任何标的同时满足趋势闸门、基本面闸门、15% 安全边际、扣除 2.5% 往返成本后 ≥8% 净上行以及 0.75 置信度，因此按政策保持现金、耐心等待更佳机会。\n\nDECISION: HOLD\nSYMBOL: NONE\nTARGET_AMOUNT_USD: 0\nHORIZON_MONTHS: 12\nCONFIDENCE: 0.75\nENTRY_GATE: FAIL\nFUNDAMENTAL_GATE: FAIL\nSEC_RISK_GATE: FAIL\nTREND_GATE: FAIL\nPRICE_VS_SMA20_PCT: DATA_UNAVAILABLE\nFAIR_VALUE_RANGE_USD: DATA_UNAVAILABLE\nMARGIN_OF_SAFETY_PCT: DATA_UNAVAILABLE\nEXPECTED_GROSS_UPSIDE_PCT: DATA_UNAVAILABLE\nROUND_TRIP_COST_PCT: 2.5\nEXPECTED_NET_UPSIDE_PCT: DATA_UNAVAILABLE\nTHESIS: 当前账户无持仓、全部为现金，无既有暴露需要调整，因此今日决策完全取决于是否有标的同时通过全部入场闸门。逐项筛查结论如下：（1）价格闸门——META（约 +11.2% 对 SMA20）与 QCOM（约 +11.4%）因 9/8 \"亚马逊定制 AI 数据中心芯片\"消息跳涨而超过不超过 8% 的溢价上限；ISRG 为工具确认的重大趋势破位（价格远低于 SMA200 且出现 1.53 倍异常量），趋势闸门直接不通过；AAPL（+5.7%）、AMD（+7.5%）与 ADBE 位于 SMA20 下方或溢价范围内，价格条件可过。（2）基本面与安全边际——AAPL 虽 MACD 多头、量比 1.72 且站上 20/50/200 日均线，并由 iPhone 18 与折叠机型发布会催化，但估值处于历史高位，无法给出保守公允价值下 15% 的安全边际；AMD 逻辑（AI 算力挑战者）扎实但估值同样透支，且买价已接近 SMA20 溢价上限；ADBE 估值最便宜（2026 年大幅回撤、街均目标显著高于现价、250 亿美元回购），但 9/10 因 Q4 收入指引中值略低于预期在 2.35 倍异常量下跳空下跌、MACD 空头且柱状走弱，叠加 AI 对创意软件护城河的长期侵蚀与 CFO 离任，基本面闸门与 0.75 置信度门槛均无法诚实通过。（3）其余高质量大盘股（GOOGL 连续 22 日、LIN 连续 39 日、AMAT 连续 34 日收于 SMA50 下方，COST、PEP、WMT、BKNG、INTU 位于中长期均线之下且 MACD 空头）缺乏趋势确认，属于\"下跌途中接刀\"。（4）成本与择时——每 80 美元仓位往返固定费用约 2 美元，占仓位 2.5%，会吞掉边际优势；今日为油价回落带动的普涨日（纳指约 +1.22%），买价普遍高于昨收 1%~4.5%，同时 8 月 CPI 环比 +0.4% 加速、9 月 15-16 日 FOMC 存在加息讨论，追高的风险回报不佳。由于入场闸门为合取条件，任一不合格即不应买入，故今日维持现金、不建仓。\nRISKS: 主要风险是机会成本：若 FOMC 最终不加息且 AI 资本开支链条继续强化（Oracle 业绩带动 Dell、HPE 等硬件股创高），AAPL、AMD、AMAT 等可能继续上行，空仓会跑输；此外 META、QCOM 的高动量可能延续。反向风险是若通胀继续加速并出现加息，当前位于均线下方的宽基科技与可选消费（BKNG、ADBE、INTU）仍可能进一步下探，此时买入会放大回撤。同时单一 80 美元仓位在 2.5% 往返成本下，容错空间很小，过早建仓会削弱长期复利。\nINVALIDATION: 出现以下任一情形将改变决策并考虑建仓：（1）高质量标的（如 GOOGL、AMGN、ADBE）在放量下重新站上 SMA20 并出现 MACD 金叉、且相对保守公允价值的折价仍不低于 15%；（2）AAPL 或 AMD 出现 10% 以上的估值回撤，使保守公允价值下安全边际达到 15% 且价格不再偏离 SMA20 上方 8%；（3）9 月 FOMC 与通胀路径明朗化、宏观不确定性下降；（4）出现经证实的公司层面重大变化（业绩指引上修、资本回报政策强化），使基本面闸门与 0.75 置信度可被满足。\nOFFICIAL_EVIDENCE: 已核查 SEC EDGAR 申报：ADBE 8-K（2026-09-10，业绩与财务状况，https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/0000796343-26-000147-index.html）与 10-Q（2026-06-15，https://www.sec.gov/Archives/edgar/data/796343/000079634326000112/0000796343-26-000112-index.html）；AAPL 10-Q（2026-07-31，https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/0000320193-26-000020-index.html）；GOOGL 10-Q（2026-07-23，https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/0001652044-26-000071-index.html）；AMD 10-Q（2026-08-05，https://www.sec.gov/Archives/edgar/data/2488/000000248826000123/0000002488-26-000123-index.html）。检索到的 FINANCIAL_RESTATEMENT、MATERIAL_WEAKNESS、BANKRUPTCY_RISK 等标记均来自标准模板条文（业绩发布 Item 信息、审计沟通条款、债券契约样板文字），经交叉核对未构成经证实的会计重述、重大诉讼、监管处罚或偿付风险事件，故未据此触发任何风控动作，但也说明在缺乏明确指引上修证据前不具备买入依据。补充公开信息：Reuters（2026-09-11）美国 8 月 CPI 环比 +0.4%、油价回落推动股指上行；Reuters（2026-09-10）Adobe Q3 收入超预期但 Q4 收入指引中值略低于预期；Amgen Q2 2026 业绩电话会（2026-08-04）显示全年收入指引上调至 382–394 亿美元、AMG 513 项目终止。\nTREND_CONFIRMATION: 多头确认：AAPL MACD 2.36 高于信号 1.57、柱状 +0.79 且改善，价格 326.57 站上 SMA20（315.28）/SMA50（317.22）/SMA200（284.65），20 日量比 1.72 属放量上行；AMD MACD 0.98 高于信号 -4.81、柱状 +5.79 改善，价格 503.6 在 SMA20/50/200 之上，买价对 SMA20 溢价约 7.5%，逼近 8% 上限；WMT MACD 呈初步金叉但价格仍在 SMA50/200 之下。空头与破位：ISRG 为工具确认的重大趋势破位（价格 360.46 对 SMA200 460.81，量比 1.53 异常量），趋势闸门不通过；GOOGL、LIN、AMAT、LRCX 分别连续 22、39、34、17 日收于 SMA50 下方，MACD 整体偏空（ADBE 柱状 -5.05 且走弱、GOOGL -0.83 走弱、AMGN -8.26 走弱）；META 与 QCOM 虽 MACD 多头（柱状 +9.92、+2.04）但买价分别高出 SMA20 约 11.2% 与 11.4%，触发溢价上限。整体看多数权重股仍处均线下方，MACD 仅作确认而非单独买入触发器，故不构成买入级别的多点共振。\nDATA_AS_OF: 2026-09-11",
+    "date": "2026-09-15",
+    "content": "## 组合与市场审查（2026-09-15）\n\n**1) 组合现状**：目前组合无任何持仓，资金全部为现金，无行业集中度问题。按策略约束，单笔新仓位目标规模为 80 美元，并须保留最低现金储备，本次建仓后仍留有充足现金缓冲。\n\n**2) 候选筛选（趋势门槛先行）**：\n- META（+12.8% vs SMA20）超过 8% 溢价上限；PEP、LRCX 已出现**确认的重大趋势破位**（连续收盘低于 SMA50 + 异常放量）→ 直接出局。\n- AMAT、LIN、INTU、COST、AVGO、ISRG、WMT 等长期结构走坏（长期收盘低于 SMA50 或低于 SMA200）。\n- GOOGL、MSFT、AAPL 趋势最干净，但按 FY2026/27 盈利估算，合理价值上沿仅比现价高约 8–10%，**安全边际不足 15%**；AAPL FY2026 Q3 指引偏弱（供应受限、存储成本上升、CEO 交接）→ 基本面门槛不通过。\n- ADBE 是唯一同时满足“估值深度折价 + 趋势已修复 + 指引上调”的标的。\n\n**3) 基本面**：Adobe Q3 FY2026（截至 2026-08-28）营收 67.6 亿美元创纪录、non-GAAP EPS 6.13 美元超预期，AI-first ARR 同比增逾 150%，MAU 达 10 亿，并**上调** FY2026 营收与 EPS 指引。按 FY2026 non-GAAP EPS 约 24 美元计，前瞻 P/E 约 11 倍，自由现金流收益率约 9–10%，估值已隐含相当悲观预期。\n\n**4) 趋势与成本**：价格已重回 SMA50 上方，低于 SMA20 约 3.3%（远低于 8% 上限），无确认破位。80 美元头寸的固定往返费用约 2 美元（≈2.5%），被约 23.7% 的毛上行走势充分覆盖。\n\n**5) 官方文件核对**：SEC 风险扫描中出现的 CRITICAL 标记（FINANCIAL_RESTATEMENT / BANKRUPTCY_RISK）逐条核对后，均为 8-K/10-Q 目录标题与契约模板免责文字的**文本误报**，未见真实重述、调查或偿付事件。\n\nDECISION: BUY\nSYMBOL: ADBE\nTARGET_AMOUNT_USD: 80\nHORIZON_MONTHS: 12\nCONFIDENCE: 0.76\nENTRY_GATE: PASS\nFUNDAMENTAL_GATE: PASS\nSEC_RISK_GATE: PASS\nTREND_GATE: PASS\nPRICE_VS_SMA20_PCT: -3.28\nFAIR_VALUE_RANGE_USD: 310-355\nMARGIN_OF_SAFETY_PCT: 19.2\nEXPECTED_GROSS_UPSIDE_PCT: 23.7\nROUND_TRIP_COST_PCT: 2.50\nEXPECTED_NET_UPSIDE_PCT: 21.20\nTHESIS: 组合当前无持仓、全部为现金，本次为组合首笔、小额（80 美元）建仓，单一标的风险敞口有限，建仓后仍保留充足现金储备，符合“现金也是一种仓位”的耐心原则。横向比较后，META 高于 SMA20 超 8% 不符合入场上限，PEP 与 LRCX 已确认重大趋势破位，AAPL 因 FY2026 Q3 指引偏弱（供应受限、存储成本上升、CEO 交接）基本面门槛不通过；GOOGL 与 MSFT 趋势最健康，但按 FY2026/27 盈利估算的合理价值仅比现价高约 8–10%，安全边际不足 15%，故均被排除。ADBE 是唯一通过全部入场门槛的标的：Q3 FY2026（截至 2026-08-28）营收 67.6 亿美元创纪录、non-GAAP EPS 6.13 美元超预期，AI-first ARR 同比增长逾 150%，MAU 达 10 亿，并上调 FY2026 营收与 EPS 指引；按 FY2026 non-GAAP EPS 约 24 美元计，前瞻 P/E 约 11 倍、自由现金流收益率约 9–10%，估值已隐含较悲观的 AI 替代预期。以 FY2027 盈利与 8%–8.5% 自由现金流收益率交叉印证，合理价值区间 310–355 美元，基准 325 美元，对应安全边际约 19%、毛上行约 23.7%，扣除约 2.5% 的固定往返费用后净上行约 21.2%。趋势上股价已重回 SMA50 上方，低于 SMA20 约 3.28%（未超 8% 上限），无确认重大破位。\nRISKS: 生成式 AI 原生与低价替代工具侵蚀创意软件定价权与增量用户，市场可能继续下调估值倍数（BofA 于 2026 年 7 月给出 underperform 与 190 美元目标价）；Q3 超预期后股价仍下跌，说明多空分歧大，若 ARR 增速放缓或指引转弱，估值折价可能进一步扩大；2026 年 6 月与 7 月的 8-K 涉及高管离任与遣散/留任安排，存在管理层执行与战略连续性的风险；MACD 仍位于信号线下方，动能尚未完全转强，科技股在 AI 资本开支情绪波动中可能被放大回撤；头寸金额小，但固定费用占仓位比例约 2.5%，短期波动容易侵蚀收益。\nINVALIDATION: 若 FY2026/FY2027 营收或 EPS 指引被下调，或 Digital Media/总 ARR 增速明显降至个位数以下；若出现真实的重述、SEC/司法调查、重大不利和解等会计、法律、监管或偿付事件；若股价连续 2 个交易日收盘跌破 SMA50 并伴随成交量超过 20 日均量 1.5 倍的确认性破位，或跌破前期低点；若出现生成式 AI 导致关键订阅净流失、原“宽护城河 + 深度折价”投资逻辑被证据推翻的情形。\nOFFICIAL_EVIDENCE: 1) ADBE Form 8-K（2026-09-10，accession 0000796343-26-000147，https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/0000796343-26-000147-index.html）：Q3 FY2026 业绩发布与上调 FY2026 指引。2) ADBE Form 10-Q（2026-06-15，accession 0000796343-26-000112，https://www.sec.gov/Archives/edgar/data/796343/000079634326000112/0000796343-26-000112-index.html）：半年报，未见真实重述，内控为常规表述。3) ADBE Form 8-K（2026-07-17，accession 0000796343-26-000120）：高管离任与遣散/留任安排。4) Adobe 官方 IR 新闻稿（FY2025 Q4：https://www.adobe.com/cc-shared/assets/investor-relations/pdfs/01215202/a54gu6y5tegrrf.pdf）。核对说明：工具返回的 FINANCIAL_RESTATEMENT/BANKRUPTCY_RISK 等 CRITICAL 标记，逐条比对原文后确认均为 8-K/10-Q 目录标题（如“Results of Operations and Financial Condition”）与契约模板免责文字（破产法/受托人通用条款）造成的文本误报，未发现真实的重述、调查、诉讼和解或偿付风险事件。\nTREND_CONFIRMATION: 以 2026-09-14 完整日线计：收盘 265.60，SMA20 271.56、SMA50 253.53、SMA200 266.34，价格站上 SMA50、略低于 SMA20 与 SMA200，连续收盘低于 SMA50 为 0 天，未确认重大趋势破位。MACD 为 0.796、信号线 5.012、柱状 -4.22（为负但收敛、方向改善），尚未金叉，仅作确认项而非唯一触发。量比 20 日均量 1.15 倍，未出现 1.5 倍以上的异常放量破位。结论：TREND_GATE 通过（无确认破位 + 入场价低于 SMA20 约 3.28%，未超过 8% 上限），但动能尚未完全转强，故仅以小额建仓并设定明确失效条件。\nDATA_AS_OF: 2026-09-15",
     "model": "deepseek-v4-flash",
     "execution_mode": "advisory",
     "execution_status": "not_executed"
@@ -65,108 +65,115 @@
       "model": "deepseek-v4-flash",
       "execution_mode": "advisory",
       "execution_status": "not_executed"
+    },
+    {
+      "date": "2026-09-15",
+      "content": "## 组合与市场审查（2026-09-15）\n\n**1) 组合现状**：目前组合无任何持仓，资金全部为现金，无行业集中度问题。按策略约束，单笔新仓位目标规模为 80 美元，并须保留最低现金储备，本次建仓后仍留有充足现金缓冲。\n\n**2) 候选筛选（趋势门槛先行）**：\n- META（+12.8% vs SMA20）超过 8% 溢价上限；PEP、LRCX 已出现**确认的重大趋势破位**（连续收盘低于 SMA50 + 异常放量）→ 直接出局。\n- AMAT、LIN、INTU、COST、AVGO、ISRG、WMT 等长期结构走坏（长期收盘低于 SMA50 或低于 SMA200）。\n- GOOGL、MSFT、AAPL 趋势最干净，但按 FY2026/27 盈利估算，合理价值上沿仅比现价高约 8–10%，**安全边际不足 15%**；AAPL FY2026 Q3 指引偏弱（供应受限、存储成本上升、CEO 交接）→ 基本面门槛不通过。\n- ADBE 是唯一同时满足“估值深度折价 + 趋势已修复 + 指引上调”的标的。\n\n**3) 基本面**：Adobe Q3 FY2026（截至 2026-08-28）营收 67.6 亿美元创纪录、non-GAAP EPS 6.13 美元超预期，AI-first ARR 同比增逾 150%，MAU 达 10 亿，并**上调** FY2026 营收与 EPS 指引。按 FY2026 non-GAAP EPS 约 24 美元计，前瞻 P/E 约 11 倍，自由现金流收益率约 9–10%，估值已隐含相当悲观预期。\n\n**4) 趋势与成本**：价格已重回 SMA50 上方，低于 SMA20 约 3.3%（远低于 8% 上限），无确认破位。80 美元头寸的固定往返费用约 2 美元（≈2.5%），被约 23.7% 的毛上行走势充分覆盖。\n\n**5) 官方文件核对**：SEC 风险扫描中出现的 CRITICAL 标记（FINANCIAL_RESTATEMENT / BANKRUPTCY_RISK）逐条核对后，均为 8-K/10-Q 目录标题与契约模板免责文字的**文本误报**，未见真实重述、调查或偿付事件。\n\nDECISION: BUY\nSYMBOL: ADBE\nTARGET_AMOUNT_USD: 80\nHORIZON_MONTHS: 12\nCONFIDENCE: 0.76\nENTRY_GATE: PASS\nFUNDAMENTAL_GATE: PASS\nSEC_RISK_GATE: PASS\nTREND_GATE: PASS\nPRICE_VS_SMA20_PCT: -3.28\nFAIR_VALUE_RANGE_USD: 310-355\nMARGIN_OF_SAFETY_PCT: 19.2\nEXPECTED_GROSS_UPSIDE_PCT: 23.7\nROUND_TRIP_COST_PCT: 2.50\nEXPECTED_NET_UPSIDE_PCT: 21.20\nTHESIS: 组合当前无持仓、全部为现金，本次为组合首笔、小额（80 美元）建仓，单一标的风险敞口有限，建仓后仍保留充足现金储备，符合“现金也是一种仓位”的耐心原则。横向比较后，META 高于 SMA20 超 8% 不符合入场上限，PEP 与 LRCX 已确认重大趋势破位，AAPL 因 FY2026 Q3 指引偏弱（供应受限、存储成本上升、CEO 交接）基本面门槛不通过；GOOGL 与 MSFT 趋势最健康，但按 FY2026/27 盈利估算的合理价值仅比现价高约 8–10%，安全边际不足 15%，故均被排除。ADBE 是唯一通过全部入场门槛的标的：Q3 FY2026（截至 2026-08-28）营收 67.6 亿美元创纪录、non-GAAP EPS 6.13 美元超预期，AI-first ARR 同比增长逾 150%，MAU 达 10 亿，并上调 FY2026 营收与 EPS 指引；按 FY2026 non-GAAP EPS 约 24 美元计，前瞻 P/E 约 11 倍、自由现金流收益率约 9–10%，估值已隐含较悲观的 AI 替代预期。以 FY2027 盈利与 8%–8.5% 自由现金流收益率交叉印证，合理价值区间 310–355 美元，基准 325 美元，对应安全边际约 19%、毛上行约 23.7%，扣除约 2.5% 的固定往返费用后净上行约 21.2%。趋势上股价已重回 SMA50 上方，低于 SMA20 约 3.28%（未超 8% 上限），无确认重大破位。\nRISKS: 生成式 AI 原生与低价替代工具侵蚀创意软件定价权与增量用户，市场可能继续下调估值倍数（BofA 于 2026 年 7 月给出 underperform 与 190 美元目标价）；Q3 超预期后股价仍下跌，说明多空分歧大，若 ARR 增速放缓或指引转弱，估值折价可能进一步扩大；2026 年 6 月与 7 月的 8-K 涉及高管离任与遣散/留任安排，存在管理层执行与战略连续性的风险；MACD 仍位于信号线下方，动能尚未完全转强，科技股在 AI 资本开支情绪波动中可能被放大回撤；头寸金额小，但固定费用占仓位比例约 2.5%，短期波动容易侵蚀收益。\nINVALIDATION: 若 FY2026/FY2027 营收或 EPS 指引被下调，或 Digital Media/总 ARR 增速明显降至个位数以下；若出现真实的重述、SEC/司法调查、重大不利和解等会计、法律、监管或偿付事件；若股价连续 2 个交易日收盘跌破 SMA50 并伴随成交量超过 20 日均量 1.5 倍的确认性破位，或跌破前期低点；若出现生成式 AI 导致关键订阅净流失、原“宽护城河 + 深度折价”投资逻辑被证据推翻的情形。\nOFFICIAL_EVIDENCE: 1) ADBE Form 8-K（2026-09-10，accession 0000796343-26-000147，https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/0000796343-26-000147-index.html）：Q3 FY2026 业绩发布与上调 FY2026 指引。2) ADBE Form 10-Q（2026-06-15，accession 0000796343-26-000112，https://www.sec.gov/Archives/edgar/data/796343/000079634326000112/0000796343-26-000112-index.html）：半年报，未见真实重述，内控为常规表述。3) ADBE Form 8-K（2026-07-17，accession 0000796343-26-000120）：高管离任与遣散/留任安排。4) Adobe 官方 IR 新闻稿（FY2025 Q4：https://www.adobe.com/cc-shared/assets/investor-relations/pdfs/01215202/a54gu6y5tegrrf.pdf）。核对说明：工具返回的 FINANCIAL_RESTATEMENT/BANKRUPTCY_RISK 等 CRITICAL 标记，逐条比对原文后确认均为 8-K/10-Q 目录标题（如“Results of Operations and Financial Condition”）与契约模板免责文字（破产法/受托人通用条款）造成的文本误报，未发现真实的重述、调查、诉讼和解或偿付风险事件。\nTREND_CONFIRMATION: 以 2026-09-14 完整日线计：收盘 265.60，SMA20 271.56、SMA50 253.53、SMA200 266.34，价格站上 SMA50、略低于 SMA20 与 SMA200，连续收盘低于 SMA50 为 0 天，未确认重大趋势破位。MACD 为 0.796、信号线 5.012、柱状 -4.22（为负但收敛、方向改善），尚未金叉，仅作确认项而非唯一触发。量比 20 日均量 1.15 倍，未出现 1.5 倍以上的异常放量破位。结论：TREND_GATE 通过（无确认破位 + 入场价低于 SMA20 约 3.28%，未超过 8% 上限），但动能尚未完全转强，故仅以小额建仓并设定明确失效条件。\nDATA_AS_OF: 2026-09-15",
+      "model": "deepseek-v4-flash",
+      "execution_mode": "advisory",
+      "execution_status": "not_executed"
     }
   ],
   "prices": {
     "AAPL": {
-      "price": 333.165,
-      "timestamp": "2026-09-11"
+      "price": 330.645,
+      "timestamp": "2026-09-15"
     },
     "ADBE": {
-      "price": 252.71,
-      "timestamp": "2026-09-11"
+      "price": 262.6636,
+      "timestamp": "2026-09-15"
     },
     "AMAT": {
-      "price": 461.74,
-      "timestamp": "2026-09-11"
+      "price": 419.295,
+      "timestamp": "2026-09-15"
     },
     "AMD": {
-      "price": 516.43,
-      "timestamp": "2026-09-11"
+      "price": 503.72,
+      "timestamp": "2026-09-15"
     },
     "AMGN": {
-      "price": 379.12,
-      "timestamp": "2026-09-11"
+      "price": 378.3301,
+      "timestamp": "2026-09-15"
     },
     "AMZN": {
-      "price": 256.63,
-      "timestamp": "2026-09-11"
+      "price": 248.6906,
+      "timestamp": "2026-09-15"
     },
     "ASML": {
-      "price": 1712.17,
-      "timestamp": "2026-09-11"
+      "price": 1590.625,
+      "timestamp": "2026-09-15"
     },
     "AVGO": {
-      "price": 365.08,
-      "timestamp": "2026-09-11"
+      "price": 338.855,
+      "timestamp": "2026-09-15"
     },
     "BKNG": {
-      "price": 174.48,
-      "timestamp": "2026-09-11"
+      "price": 171.61,
+      "timestamp": "2026-09-15"
     },
     "COST": {
-      "price": 903.77,
-      "timestamp": "2026-09-11"
+      "price": 909.27,
+      "timestamp": "2026-09-15"
     },
     "CSX": {
-      "price": 48.9299,
-      "timestamp": "2026-09-11"
+      "price": 48.835,
+      "timestamp": "2026-09-15"
     },
     "GOOGL": {
-      "price": 340.43,
-      "timestamp": "2026-09-11"
+      "price": 343.78,
+      "timestamp": "2026-09-15"
     },
     "INTU": {
-      "price": 319.965,
-      "timestamp": "2026-09-11"
+      "price": 335.54,
+      "timestamp": "2026-09-15"
     },
     "ISRG": {
-      "price": 368.955,
-      "timestamp": "2026-09-11"
+      "price": 377.461,
+      "timestamp": "2026-09-15"
     },
     "LIN": {
-      "price": 467.02,
-      "timestamp": "2026-09-11"
+      "price": 462.31,
+      "timestamp": "2026-09-15"
     },
     "LRCX": {
-      "price": 301.98,
-      "timestamp": "2026-09-11"
+      "price": 268.055,
+      "timestamp": "2026-09-15"
     },
     "META": {
-      "price": 649.3,
-      "timestamp": "2026-09-11"
+      "price": 669.355,
+      "timestamp": "2026-09-15"
     },
     "MSFT": {
-      "price": 494.73,
-      "timestamp": "2026-09-11"
+      "price": 498.285,
+      "timestamp": "2026-09-15"
     },
     "NVDA": {
-      "price": 219.335,
-      "timestamp": "2026-09-11"
+      "price": 211.6,
+      "timestamp": "2026-09-15"
     },
     "PANW": {
-      "price": 328.835,
-      "timestamp": "2026-09-11"
+      "price": 378.24,
+      "timestamp": "2026-09-15"
     },
     "PEP": {
-      "price": 136.75,
-      "timestamp": "2026-09-11"
+      "price": 135.73,
+      "timestamp": "2026-09-15"
     },
     "QCOM": {
-      "price": 184.9,
-      "timestamp": "2026-09-11"
+      "price": 189.55,
+      "timestamp": "2026-09-15"
     },
     "TMUS": {
-      "price": 183.64,
-      "timestamp": "2026-09-11"
+      "price": 181.06,
+      "timestamp": "2026-09-15"
     },
     "VRTX": {
-      "price": 515.195,
-      "timestamp": "2026-09-11"
+      "price": 515.445,
+      "timestamp": "2026-09-15"
     },
     "WMT": {
-      "price": 106.61,
-      "timestamp": "2026-09-11"
+      "price": 108.805,
+      "timestamp": "2026-09-15"
     }
   }
 }
