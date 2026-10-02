@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-30T15:46:10.246163-04:00",
+  "generated_at": "2026-10-02T15:24:36.477968-04:00",
   "model": "deepseek-v4-flash",
   "initial_cash": 200.0,
   "latest": {
-    "date": "2026-09-30",
-    "content": "## 决策分析摘要（2026-09-30）\n\n**组合状态**：账户为纯现金状态，无持仓，无需做任何减仓或再平衡判断；今日唯一可行动作是新建仓位（单笔目标约 80 美元、最多 2 个持仓、须保留最低现金储备）。\n\n**关键宏观变化**：9 月 16 日美联储加息 25bp 至 3.75%–4%，并暗示年内还有一次，油价推动的通胀回升使高估值成长股面临折现率压力——这直接提高了\"追高\"的机会成本。\n\n**候选池两端都不合格**：\n- 趋势最强者已透支：AMD +12.1%、AMAT +12.3%、LRCX +8.6%、META +9.3%（相对 SMA20）均超过 8% 溢价上限。\n- 优质龙头无安全边际：MSFT(+1.8%)、NVDA(+2.1%)、QCOM(+0.6%)、AMGN(+4.9%) 趋势完好，但估值已等于或高于我的保守公允价值下限。\n- 折价者趋势未修复：ADBE(-8.1%，连续 10 日收于 SMA50 下方，MACD 深度负值)、INTU(-13.7%)、TMUS(-6.5%)、BKNG(-6.7%)、PEP(-4.0%)、CSX(-2.1%)，且存在 AI 对软件/广告模式的结构性冲击争议。\n\nDECISION: HOLD\nSYMBOL: NONE\nTARGET_AMOUNT_USD: 0\nHORIZON_MONTHS: 6\nCONFIDENCE: 0.7\nENTRY_GATE: FAIL\nFUNDAMENTAL_GATE: FAIL\nSEC_RISK_GATE: PASS\nTREND_GATE: FAIL\nPRICE_VS_SMA20_PCT: DATA_UNAVAILABLE\nFAIR_VALUE_RANGE_USD: DATA_UNAVAILABLE\nMARGIN_OF_SAFETY_PCT: DATA_UNAVAILABLE\nEXPECTED_GROSS_UPSIDE_PCT: DATA_UNAVAILABLE\nROUND_TRIP_COST_PCT: 2.5\nEXPECTED_NET_UPSIDE_PCT: DATA_UNAVAILABLE\n\nTHESIS: 账户目前为空仓纯现金状态，无持仓需要调整，因此今日决策仅取决于\"是否有候选同时通过全部建仓门槛\"。结论是没有：其一，趋势门槛方面，动量最强的 AI 硬件与半导体标的已明显偏离均线（AMD 相对 SMA20 +12.1%、AMAT +12.3%、LRCX +8.6%、META +9.3%），超过 8% 的溢价上限，属于典型的\"追高\"位置；其二，估值门槛方面，具备持久护城河的龙头（MSFT、NVDA、QCOM、AMGN、ISRG）趋势完好但价格已等于或高于我基于其自身盈利与现金流假设给出的保守公允价值下限，无法提供 15% 安全边际；其三，折价明显的标的（ADBE 相对 SMA20 -8.1% 且连续 10 个交易日收于 SMA50 下方、INTU -13.7% 且 MACD 深度为负、TMUS/BKNG/PEP/CSX 连续 10–20 日位于 SMA50 下方）仍在中期下行趋势中，并伴随 AI 对软件商业模式的结构性冲击或终端需求走弱争议，缺乏趋势确认。宏观上，9 月 16 日美联储加息 25bp 至 3.75%–4% 并暗示再有一次，通胀由油价推动回升，对高估值成长股形成折现率压力，进一步降低此时建仓的风险回报比。成本方面，固定费用往返 2 美元对 80 美元仓位等于 2.5%，即毛上涨须超过约 10.6% 才能实现 8% 净上涨，而当前没有任何候选能同时通过全部门槛并提供该空间。因此选择保留现金、等待趋势修复或优质资产进入 15% 以上折价区间的更好赔率。\n\nRISKS: 一是机会成本：若 AI 资本开支持续超预期（全球 AI 投资 2026 年已超万亿美元量级），半导体与 AI 基础设施可能继续上行，空仓将错过上涨；二是逆向风险：软件板块（ADBE、INTU）的深度折价若被证明是市场误判，等待会错过快速估值修复；三是宏观风险：若油价与通胀进一步失控、美联储继续加息，当前已偏高的估值可能整体压缩，届时\"没买\"是对的但账户现金实际购买力下降；四是若以\"便宜\"为由贸然买入下行趋势中的折价股，可能承受 30 天最短持有期内的深度回撤。\n\nINVALIDATION: 出现下列任一情形即改变当前判断：(1) 某标的进入价格位于 SMA20 上方 0–8% 区间、位于 SMA50/200 上方且 MACD 转为金叉、同时相对保守公允价值仍具备 ≥15% 安全边际与 ≥8% 净上涨空间——则当日转为买入；(2) 折价标的中出现明确的趋势修复（连续 2 个交易日以上收复 SMA50、MACD 金叉、成交量配合放大）且官方文件确认基本面未恶化（例如 ADBE 继续保持上调全年指引），则重新评估建仓；(3) 宏观转向宽松或出现系统性回调，使优质龙头（MSFT、NVDA、GOOGL、AMGN 等）进入 15% 以上折价区间，则主动提高仓位。\n\nOFFICIAL_EVIDENCE:\n- ADBE 10-Q（2026-09-22，accession 0000796343-26-000156，https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/0000796343-26-000156-index.html）与 ADBE 8-K（2026-09-10，accession 0000796343-26-000147）：正式披露显示 Q3 FY2026 收入 67.6 亿美元、同比 +13%，non-GAAP EPS 6.13 美元并再次上调全年目标；工具标记的 CRITICAL/HIGH \"重述/破产/重大缺陷\" 命中均为 10-Q 目录、审计委员会标准条款与客户资不抵债等模板化风险因素文字，未发现经佐证的实质性会计、法律或偿付事件。\n- QCOM 10-Q（2026-07-29，accession 0000804328-26-000086，https://www.sec.gov/Archives/edgar/data/804328/000080432826000086/0000804328-26-000086-index.html）与 8-K（2026-09-08，accession 0001104659-26-105718）：官方与公司公告显示 FQ3 2026 收入 99 亿美元（同比 -4%），手机业务 -20%，但汽车 +61%、IoT +9%，非手机业务指引 FY2027 加速至 60% 以上增长，并与 Amazon 达成面向 AI 数据中心的定制芯片与光互连多代合作；标记事件同样为模板化文字。\n- AVGO 10-Q（2026-09-10，accession 0001730168-26-000080，https://www.sec.gov/Archives/edgar/data/1730168/000173016826000080/0001730168-26-000080-index.html）：Q3 FY2026 收入 296 亿美元（+86%）、AI 半导体收入 +221%，全年 AI 收入指引上调至 580 亿美元，但股价连续 30 个交易日位于 SMA50 下方，反映估值压缩而非基本面恶化；标记事件为常规法律与风险因素文字。\n- 结论：上述官方文件中未发现需要触发 SEC 风险门槛否决的、经证据佐证的实质性事件（SEC_RISK_GATE = PASS），但估值与趋势条件不满足，故不建仓。\n\nTREND_CONFIRMATION: 账户无持仓，无需离场判断。候选池趋势扫描（截至 2026-09-29 收盘，全部使用已完成日线）：相对 SMA20 溢价——META +9.3%、AMD +12.1%、AMAT +12.3%、LRCX +8.6% 均已超出或显著接近 8% 上限，属追高区；ISRG +7.6%、PANW +7.2% 贴近上限。趋势完好但估值已高：MSFT +1.8%（位于 SMA20/50/200 上方，MACD 柱状图改善但快线略低于信号线）、NVDA +2.1%（MACD 多头、柱状图走弱）、QCOM +0.6%（位于 SMA20/50/200 上方、MACD 多头、柱状图走弱）、AMGN +4.9%（MACD 多头且改善、20 日量比 1.20 但未达 1.5 异常阈值）。趋势走弱：GOOGL -0.3%（连续 5 日收于 SMA50 下方）、CSX -2.1%（连续 20 日线下）、COST +1.6% 但连续 23 日收于 SMA50 下方且低于 SMA200、PEP -4.0%（连续 17 日线下）、TMUS -6.5%（连续 11 日线下）、BKNG -6.7%（连续 17 日线下）、ADBE -8.1%（连续 10 日线下、MACD -7.94 深度负值）、INTU -13.7%（MACD -16.31）、WMT 低于 SMA200 约 9.9%。全部标的 20 日量比均低于 1.5，无异常放量，故没有任何标的被确认为\"主要趋势破位\"，但同时也没有任何标的呈现买入级别的趋势确认（MACD 多头 + 均线多头排列 + 合理位置三者同时满足且估值达标）。因此趋势门槛对建仓不通过。\n\nDATA_AS_OF: 2026-09-30",
+    "date": "2026-10-02",
+    "content": "DECISION: HOLD\nSYMBOL: NONE\nTARGET_AMOUNT_USD: 0\nHORIZON_MONTHS: 6\nCONFIDENCE: 0.72\nENTRY_GATE: FAIL\nFUNDAMENTAL_GATE: PASS\nSEC_RISK_GATE: PASS\nTREND_GATE: PASS\nPRICE_VS_SMA20_PCT: DATA_UNAVAILABLE\nFAIR_VALUE_RANGE_USD: DATA_UNAVAILABLE\nMARGIN_OF_SAFETY_PCT: DATA_UNAVAILABLE\nEXPECTED_GROSS_UPSIDE_PCT: DATA_UNAVAILABLE\nEXPECTED_NET_UPSIDE_PCT: DATA_UNAVAILABLE\nROUND_TRIP_COST_PCT: 2.5\nTHESIS: 当前组合为 100% 现金、无任何持仓，没有需要调整的存量仓位，因此今日核心问题是\"是否按纪律新建第一个仓位\"。组合约束为目标新建仓位约 80 美元、最多 2 个持仓、保留 ≥20 美元现金缓冲、无杠杆，且入场闸门为合取条件（任一项失败或不可得即不建仓）。趋势层面筛选结果：MSFT（现价约 514.9，较 SMA20 溢价约 2.7%）、NVDA（约 234.0，溢价约 4.7%）MACD 处于多头、位于 20/50/200 日均线上方且无 50 日均线级别破位；META（约 727.4，溢价约 5.4%）亦为多头但已明显偏离 SMA20 且 MACD 柱走弱；而 GOOGL、AMZN、AAPL、QCOM、ADBE、PEP、COST、TMUS、CSX、WMT、VRTX、AVGO 等处于空头或均线下方。基本面层面，MSFT、NVDA 具备宽广护城河、强劲现金流与稳健资产负债表，未见正式文件披露的指引恶化，故基本面闸门与趋势闸门可判为 PASS。但真正卡住的是估值闸门：决策时点无法取得可核实的前瞻盈利/现金流与估值输入（检索无返回结果），因此无法以 ≥0.75 的置信度主张\"保守公允价值区间下限较现价仍有 ≥15% 安全边际\"，也无法证明扣除 2.5% 往返成本后仍有 ≥8% 的净上行空间。由于合取闸门中\"安全边际/净上行\"一项不满足、且关键估值证据不可得，按策略规则应保持观望、保留现金等待更清晰的价格或证据，故今日不建仓。ROUND_TRIP_COST_PCT: 2.5%; TARGET_AMOUNT_USD: 0.00; CONFIDENCE: 0.72\nRISKS: 1）机会成本风险：若 AI 资本开支周期继续推动 MSFT/NVDA 等优质标的上行，纯现金组合将跑输，且未来买入成本更高（此为主要下行风险）；2）估值风险：上述标的接近历史高位、部分（META）已显著高于 SMA20，一旦市场对 AI 变现节奏重新定价，回撤幅度可能超过 2.5% 的往返成本；3）若为建仓而在缺乏可验证前瞻数据时降低标准，将违反 15% 安全边际与 8% 净上行门槛，属纪律性错误而非收益机会；4）组合尚无分散度，任何单一仓位的个股风险都会 100% 传导至净值。\nINVALIDATION: 若在同一策略参数下同时出现以下条件，HOLD 结论失效并转为 BUY：候选标的可获得可核实的保守公允价值区间，且其下限较现价高出 ≥15%、扣除 2.5% 往返成本后净上行 ≥8%；同时 MACD 维持多头、价格对 SMA20 溢价 ≤8%、无 50 日均线两日收盘确认的破位，且 SEC 文件无重大会计/法律/监管/偿付事件。反之，若未来持仓标的出现基本面或指引实质恶化、重大法律/会计/监管/偿付事件，或连续两日收盘跌破 50 日均线并伴随 ≥1.5 倍异常量能（当前无持仓，此条仅对未来生效），则触发早期退出评估。\nOFFICIAL_EVIDENCE: 已审阅的 SEC 备案（截至 2026-10-02）：MSFT 10-K（2026-07-29， accession 0001193125-26-323660）、8-K（2026-09-02， accession 0001193125-26-380280）；NVDA 10-Q（2026-08-26， accession 0001045810-26-000075）、8-K（2026-08-26， accession 0001045810-26-000073）；META 10-Q（2026-07-30， accession 0001628280-26-050705）、8-K（2026-07-29， accession 0001628280-26-050596）；GOOGL 10-Q（2026-07-23， accession 0001652044-26-000071）。判定说明：系统返回的 \"FINANCIAL_RESTATEMENT/MATERIAL_WEAKNESS/BANKRUPTCY_RISK\" 等标记均为 10-K/10-Q/8-K 中风险因素、审计准则说明与债券法律意见的模板化文本匹配（如\"if a material weakness exists\"\"subject to applicable bankruptcy laws\"），并非已确认的重述、内控重大缺陷或偿付事件，故不构成 SEC_RISK_GATE 的实质性失败。需留意 META 8-K 中披露的 2026 全年费用指引下限被上调（含约 24 亿美元法律程序相关费用），属费用端压力而非收入指引下调，列入观察项。\nTREND_CONFIRMATION: 截至 2026-10-01 已完成日线：MSFT 收 512.80，SMA20/50/200 分别为 501.30/485.01/432.62，MACD 7.42 高于信号 7.36（多头、柱走强），量比 0.92，无破位；NVDA 收 230.86，SMA20/50/200 为 223.51/217.77/200.43，MACD 3.07 高于信号 2.45（多头、柱走强），量比 0.87，无破位；META 收 725.93，SMA20/50/200 为 690.05/622.60/627.98，MACD 36.04 高于信号 35.28（多头但柱走弱），量比 0.51；ISRG 收 401.24（MACD 多头但柱走弱，且仍低于 SMA200 448.05）；COST/AVGO/LIN 虽 MACD 转正但收盘仍位于 SMA50 下方（分别为 25/32/54 日）。空头排列：GOOGL、AMZN、AAPL、QCOM、ADBE、PEP、TMUS、CSX、WMT、VRTX。全体标的 confirmed_major_trend_break 均为 false、无异常放量，MACD 仅作确认而非独立触发，综合判断最佳趋势候选为 MSFT/NVDA，但均未同时满足估值闸门。\nDATA_AS_OF: 2026-10-02",
     "model": "deepseek-v4-flash",
     "execution_mode": "advisory",
     "execution_status": "not_executed"
@@ -142,108 +142,115 @@
       "model": "deepseek-v4-flash",
       "execution_mode": "advisory",
       "execution_status": "not_executed"
+    },
+    {
+      "date": "2026-10-02",
+      "content": "DECISION: HOLD\nSYMBOL: NONE\nTARGET_AMOUNT_USD: 0\nHORIZON_MONTHS: 6\nCONFIDENCE: 0.72\nENTRY_GATE: FAIL\nFUNDAMENTAL_GATE: PASS\nSEC_RISK_GATE: PASS\nTREND_GATE: PASS\nPRICE_VS_SMA20_PCT: DATA_UNAVAILABLE\nFAIR_VALUE_RANGE_USD: DATA_UNAVAILABLE\nMARGIN_OF_SAFETY_PCT: DATA_UNAVAILABLE\nEXPECTED_GROSS_UPSIDE_PCT: DATA_UNAVAILABLE\nEXPECTED_NET_UPSIDE_PCT: DATA_UNAVAILABLE\nROUND_TRIP_COST_PCT: 2.5\nTHESIS: 当前组合为 100% 现金、无任何持仓，没有需要调整的存量仓位，因此今日核心问题是\"是否按纪律新建第一个仓位\"。组合约束为目标新建仓位约 80 美元、最多 2 个持仓、保留 ≥20 美元现金缓冲、无杠杆，且入场闸门为合取条件（任一项失败或不可得即不建仓）。趋势层面筛选结果：MSFT（现价约 514.9，较 SMA20 溢价约 2.7%）、NVDA（约 234.0，溢价约 4.7%）MACD 处于多头、位于 20/50/200 日均线上方且无 50 日均线级别破位；META（约 727.4，溢价约 5.4%）亦为多头但已明显偏离 SMA20 且 MACD 柱走弱；而 GOOGL、AMZN、AAPL、QCOM、ADBE、PEP、COST、TMUS、CSX、WMT、VRTX、AVGO 等处于空头或均线下方。基本面层面，MSFT、NVDA 具备宽广护城河、强劲现金流与稳健资产负债表，未见正式文件披露的指引恶化，故基本面闸门与趋势闸门可判为 PASS。但真正卡住的是估值闸门：决策时点无法取得可核实的前瞻盈利/现金流与估值输入（检索无返回结果），因此无法以 ≥0.75 的置信度主张\"保守公允价值区间下限较现价仍有 ≥15% 安全边际\"，也无法证明扣除 2.5% 往返成本后仍有 ≥8% 的净上行空间。由于合取闸门中\"安全边际/净上行\"一项不满足、且关键估值证据不可得，按策略规则应保持观望、保留现金等待更清晰的价格或证据，故今日不建仓。ROUND_TRIP_COST_PCT: 2.5%; TARGET_AMOUNT_USD: 0.00; CONFIDENCE: 0.72\nRISKS: 1）机会成本风险：若 AI 资本开支周期继续推动 MSFT/NVDA 等优质标的上行，纯现金组合将跑输，且未来买入成本更高（此为主要下行风险）；2）估值风险：上述标的接近历史高位、部分（META）已显著高于 SMA20，一旦市场对 AI 变现节奏重新定价，回撤幅度可能超过 2.5% 的往返成本；3）若为建仓而在缺乏可验证前瞻数据时降低标准，将违反 15% 安全边际与 8% 净上行门槛，属纪律性错误而非收益机会；4）组合尚无分散度，任何单一仓位的个股风险都会 100% 传导至净值。\nINVALIDATION: 若在同一策略参数下同时出现以下条件，HOLD 结论失效并转为 BUY：候选标的可获得可核实的保守公允价值区间，且其下限较现价高出 ≥15%、扣除 2.5% 往返成本后净上行 ≥8%；同时 MACD 维持多头、价格对 SMA20 溢价 ≤8%、无 50 日均线两日收盘确认的破位，且 SEC 文件无重大会计/法律/监管/偿付事件。反之，若未来持仓标的出现基本面或指引实质恶化、重大法律/会计/监管/偿付事件，或连续两日收盘跌破 50 日均线并伴随 ≥1.5 倍异常量能（当前无持仓，此条仅对未来生效），则触发早期退出评估。\nOFFICIAL_EVIDENCE: 已审阅的 SEC 备案（截至 2026-10-02）：MSFT 10-K（2026-07-29， accession 0001193125-26-323660）、8-K（2026-09-02， accession 0001193125-26-380280）；NVDA 10-Q（2026-08-26， accession 0001045810-26-000075）、8-K（2026-08-26， accession 0001045810-26-000073）；META 10-Q（2026-07-30， accession 0001628280-26-050705）、8-K（2026-07-29， accession 0001628280-26-050596）；GOOGL 10-Q（2026-07-23， accession 0001652044-26-000071）。判定说明：系统返回的 \"FINANCIAL_RESTATEMENT/MATERIAL_WEAKNESS/BANKRUPTCY_RISK\" 等标记均为 10-K/10-Q/8-K 中风险因素、审计准则说明与债券法律意见的模板化文本匹配（如\"if a material weakness exists\"\"subject to applicable bankruptcy laws\"），并非已确认的重述、内控重大缺陷或偿付事件，故不构成 SEC_RISK_GATE 的实质性失败。需留意 META 8-K 中披露的 2026 全年费用指引下限被上调（含约 24 亿美元法律程序相关费用），属费用端压力而非收入指引下调，列入观察项。\nTREND_CONFIRMATION: 截至 2026-10-01 已完成日线：MSFT 收 512.80，SMA20/50/200 分别为 501.30/485.01/432.62，MACD 7.42 高于信号 7.36（多头、柱走强），量比 0.92，无破位；NVDA 收 230.86，SMA20/50/200 为 223.51/217.77/200.43，MACD 3.07 高于信号 2.45（多头、柱走强），量比 0.87，无破位；META 收 725.93，SMA20/50/200 为 690.05/622.60/627.98，MACD 36.04 高于信号 35.28（多头但柱走弱），量比 0.51；ISRG 收 401.24（MACD 多头但柱走弱，且仍低于 SMA200 448.05）；COST/AVGO/LIN 虽 MACD 转正但收盘仍位于 SMA50 下方（分别为 25/32/54 日）。空头排列：GOOGL、AMZN、AAPL、QCOM、ADBE、PEP、TMUS、CSX、WMT、VRTX。全体标的 confirmed_major_trend_break 均为 false、无异常放量，MACD 仅作确认而非独立触发，综合判断最佳趋势候选为 MSFT/NVDA，但均未同时满足估值闸门。\nDATA_AS_OF: 2026-10-02",
+      "model": "deepseek-v4-flash",
+      "execution_mode": "advisory",
+      "execution_status": "not_executed"
     }
   ],
   "prices": {
     "AAPL": {
-      "price": 335.38,
-      "timestamp": "2026-09-30"
+      "price": 333.13,
+      "timestamp": "2026-10-02"
     },
     "ADBE": {
-      "price": 240.135,
-      "timestamp": "2026-09-30"
+      "price": 238.055,
+      "timestamp": "2026-10-02"
     },
     "AMAT": {
-      "price": 514.235,
-      "timestamp": "2026-09-30"
+      "price": 536.96,
+      "timestamp": "2026-10-02"
     },
     "AMD": {
-      "price": 612.28,
-      "timestamp": "2026-09-30"
+      "price": 632.7001,
+      "timestamp": "2026-10-02"
     },
     "AMGN": {
-      "price": 422.32,
-      "timestamp": "2026-09-30"
+      "price": 403.59,
+      "timestamp": "2026-10-02"
     },
     "AMZN": {
-      "price": 249.9322,
-      "timestamp": "2026-09-30"
+      "price": 250.67,
+      "timestamp": "2026-10-02"
     },
     "ASML": {
-      "price": 1814.28,
-      "timestamp": "2026-09-30"
+      "price": 1864.45,
+      "timestamp": "2026-10-02"
     },
     "AVGO": {
-      "price": 353.765,
-      "timestamp": "2026-09-30"
+      "price": 355.275,
+      "timestamp": "2026-10-02"
     },
     "BKNG": {
-      "price": 163.255,
-      "timestamp": "2026-09-30"
+      "price": 159.4,
+      "timestamp": "2026-10-02"
     },
     "COST": {
-      "price": 915.32,
-      "timestamp": "2026-09-30"
+      "price": 918.82,
+      "timestamp": "2026-10-02"
     },
     "CSX": {
-      "price": 46.77,
-      "timestamp": "2026-09-30"
+      "price": 47.535,
+      "timestamp": "2026-10-02"
     },
     "GOOGL": {
-      "price": 348.675,
-      "timestamp": "2026-09-30"
+      "price": 342.86,
+      "timestamp": "2026-10-02"
     },
     "INTU": {
-      "price": 275.69,
-      "timestamp": "2026-09-30"
+      "price": 280.97,
+      "timestamp": "2026-10-02"
     },
     "ISRG": {
-      "price": 409.2946,
-      "timestamp": "2026-09-30"
+      "price": 393.475,
+      "timestamp": "2026-10-02"
     },
     "LIN": {
-      "price": 477.47,
-      "timestamp": "2026-09-30"
+      "price": 479.6,
+      "timestamp": "2026-10-02"
     },
     "LRCX": {
-      "price": 329.73,
-      "timestamp": "2026-09-30"
+      "price": 347.21,
+      "timestamp": "2026-10-02"
     },
     "META": {
-      "price": 733.67,
-      "timestamp": "2026-09-30"
+      "price": 727.42,
+      "timestamp": "2026-10-02"
     },
     "MSFT": {
-      "price": 517.305,
-      "timestamp": "2026-09-30"
+      "price": 514.915,
+      "timestamp": "2026-10-02"
     },
     "NVDA": {
-      "price": 230.66,
-      "timestamp": "2026-09-30"
+      "price": 234.0075,
+      "timestamp": "2026-10-02"
     },
     "PANW": {
-      "price": 396.405,
-      "timestamp": "2026-09-30"
+      "price": 401.435,
+      "timestamp": "2026-10-02"
     },
     "PEP": {
-      "price": 127.295,
-      "timestamp": "2026-09-30"
+      "price": 125.895,
+      "timestamp": "2026-10-02"
     },
     "QCOM": {
-      "price": 184.26,
-      "timestamp": "2026-09-30"
+      "price": 185.255,
+      "timestamp": "2026-10-02"
     },
     "TMUS": {
-      "price": 163.42,
-      "timestamp": "2026-09-30"
+      "price": 164.075,
+      "timestamp": "2026-10-02"
     },
     "VRTX": {
-      "price": 525.72,
-      "timestamp": "2026-09-30"
+      "price": 504.4,
+      "timestamp": "2026-10-02"
     },
     "WMT": {
-      "price": 104.9,
-      "timestamp": "2026-09-30"
+      "price": 104.13,
+      "timestamp": "2026-10-02"
     }
   }
 }
